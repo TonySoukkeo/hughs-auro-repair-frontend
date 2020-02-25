@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif; }
+
+body {
+  line-height: 1.5; }
+
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.navigation-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #252122;
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  .navigation-mobile h2 {
+    font-size: 1rem; }
+  .navigation-mobile__icon-container {
+    display: flex;
+    align-items: center; }
+    .navigation-mobile__icon-container input {
+      visibility: hidden; }
+    .navigation-mobile__icon-container label span {
+      display: block;
+      position: relative;
+      height: 0.2rem;
+      width: 1.5rem;
+      background-color: #fff; }
+      .navigation-mobile__icon-container label span::before, .navigation-mobile__icon-container label span::after {
+        content: "";
+        position: absolute;
+        width: 1.5rem;
+        height: 0.2rem;
+        background-color: #fff;
+        transition: all 0.2s; }
+      .navigation-mobile__icon-container label span::before {
+        top: -0.5rem; }
+      .navigation-mobile__icon-container label span::after {
+        bottom: -0.5rem; }
+    .navigation-mobile__icon-container input:checked + label span {
+      background-color: transparent; }
+    .navigation-mobile__icon-container input:checked + label span::before {
+      transform: rotate(-45deg);
+      top: 0; }
+    .navigation-mobile__icon-container input:checked + label span::after {
+      transform: rotate(45deg);
+      top: 0; }
+  .navigation-mobile__list {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    list-style-type: none;
+    padding: 5rem 1rem 1rem 1rem;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    background-color: blue;
+    transition: all 0.3s; }
+    .navigation-mobile__list--active {
+      visibility: visible;
+      width: 50vw; }
+    .navigation-mobile__list span {
+      position: absolute;
+      right: 1rem;
+      top: 1rem; }
+  .navigation-mobile__item {
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin-bottom: 1rem; }

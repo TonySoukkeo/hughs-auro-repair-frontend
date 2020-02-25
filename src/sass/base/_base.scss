@@ -1,0 +1,19 @@
+// Colors
+$color-dark-primary: #252122;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  line-height: 1.5;
+}

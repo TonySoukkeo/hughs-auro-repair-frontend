@@ -1,0 +1,96 @@
+.navigation-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-dark-primary;
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+
+    input {
+      visibility: hidden;
+    }
+
+    label {
+      span {
+        display: block;
+        position: relative;
+        height: 0.2rem;
+        width: 1.5rem;
+        background-color: #fff;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 1.5rem;
+          height: 0.2rem;
+          background-color: #fff;
+          transition: all 0.2s;
+        }
+
+        &::before {
+          top: -0.5rem;
+        }
+
+        &::after {
+          bottom: -0.5rem;
+        }
+      }
+    }
+
+    input:checked + label span {
+      background-color: transparent;
+    }
+
+    input:checked + label span::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    input:checked + label span::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+  }
+
+  &__list {
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    list-style-type: none;
+    padding: 5rem 1rem 1rem 1rem;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    background-color: blue;
+    transition: all 0.3s;
+
+    &--active {
+      visibility: visible;
+      width: 50vw;
+    }
+
+    span {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+  }
+
+  &__item {
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+}
