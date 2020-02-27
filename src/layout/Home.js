@@ -4,6 +4,9 @@ import React from "react";
 import Banner from "../components/home/Banner";
 import Intro from "../components/home/Intro";
 import Service from "../components/home/Service";
+import Testimonials from "../components/home/Testimonials";
+import Blog from "../components/home/Blog";
+import Gallery from "../components/home/Gallery";
 
 const Home = () => {
   return (
@@ -11,6 +14,9 @@ const Home = () => {
       <Banner />
       <Intro />
       <Service />
+      <Testimonials />
+      <Blog />
+      <Gallery />
     </section>
   );
 };

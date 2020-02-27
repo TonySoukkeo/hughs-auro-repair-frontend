@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavigationMobile from "./components/navigation/NavigationMobile";
 import NavigationDesktop from "./components/navigation/NavigationDesktop";
 import Home from "./layout/Home";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
