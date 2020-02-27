@@ -1,4 +1,86 @@
 .container {
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @include respond(medium) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.dropdown-arrow {
+  position: relative;
+  display: inline-block;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(90deg);
+  margin-left: 0.6rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: #fff;
+  transition: all 0.3s;
+
+  &--active {
+    transform: rotate(180deg);
+  }
+}
+
+// Flex
+.flex {
+  display: flex;
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--space-around {
+    justify-content: space-around;
+  }
+}
+
+// Margins
+.mt-sm {
+  margin-top: 1rem;
+}
+
+// Btns
+.btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  transition: all 0.1s ease-in;
+
+  &--blue {
+    background-color: $color-blue-primary;
+  }
+
+  &--tan {
+    background-color: $color-tan-primary;
+    color: $color-dark-primary;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      background-color: $color-tan-2;
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// Fonts
+.text-bold {
+  font-weight: bold;
+}
+
+.underline {
+  display: block;
+  width: 30%;
+  height: 0.3rem;
+
+  &--blue {
+    background-color: $color-blue-primary;
+  }
 }

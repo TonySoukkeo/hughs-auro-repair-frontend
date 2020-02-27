@@ -1,0 +1,113 @@
+.home {
+  /******
+  BANNER
+  *******/
+  &__banner {
+    position: relative;
+    height: 23rem;
+    background-image: url("../images/banner_1.jpg");
+    background-size: cover;
+    background-position: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    &-header {
+      display: flex;
+      padding-top: 1.5rem;
+      position: relative;
+      z-index: 5;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        text-align: center;
+        color: #fff;
+        width: calc(100% - 8rem);
+        font-size: 2.6rem;
+        margin-bottom: 1rem;
+      }
+
+      a {
+        border-radius: 3px;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    &-quote-mobile {
+      position: relative;
+      z-index: 5;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &--header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        div {
+          width: 6rem;
+          height: 0.1rem;
+          background-color: $color-tan-primary;
+        }
+
+        h4 {
+          margin: 0 1rem;
+          font-size: 1.5rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__intro,
+  &__services {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /****
+  INTRO
+  *****/
+  &__intro {
+    h2 {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+  }
+
+  /**********
+    SERVICES
+  ***********/
+  &__services {
+    background-color: $color-dark-tertiary;
+
+    h5 {
+      color: $color-tan-primary;
+      font-size: 1rem;
+    }
+
+    h4,
+    p {
+      color: #fff;
+    }
+
+    h4 {
+      width: 70%;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
