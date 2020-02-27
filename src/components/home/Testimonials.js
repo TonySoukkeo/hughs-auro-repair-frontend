@@ -15,43 +15,47 @@ const Testimonials = () => {
       </div>
 
       <div className="home__testimonials-comments">
-        <h5>John Doe</h5>
+        <div className="home__testimonials-comments--container">
+          <h5>John Doe</h5>
 
-        <div className="home__testimonials-comments--content">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem nulla
-            minus qui tempore libero temporibus? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit.
-          </p>
+          <div className="home__testimonials-comments--content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
+              nulla minus qui tempore libero temporibus? Lorem ipsum dolor sit
+              amet consectetur adipisicing elit.
+            </p>
 
-          <br />
+            <br />
 
-          <p>
-            Blanditiis dolore, odio adipisci dolorum, excepturi totam distinctio
-            pariatur nulla voluptatem dignissimos officia. Totam temporibus,
-            illo quae expedita fuga corporis unde nesciunt!
-          </p>
+            <p>
+              Blanditiis dolore, odio adipisci dolorum, excepturi totam
+              distinctio pariatur nulla voluptatem dignissimos officia. Totam
+              temporibus, illo quae expedita fuga corporis unde nesciunt!
+            </p>
+          </div>
         </div>
 
-        <h5>John Doe</h5>
+        <div className="home__testimonials-comments--container">
+          <h5>John Doe</h5>
 
-        <div className="home__testimonials-comments--content">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem nulla
-            minus qui tempore libero temporibus? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit.
-          </p>
+          <div className="home__testimonials-comments--content">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem
+              nulla minus qui tempore libero temporibus? Lorem ipsum dolor sit
+              amet consectetur adipisicing elit.
+            </p>
 
-          <br />
+            <br />
 
-          <p>
-            Blanditiis dolore, odio adipisci dolorum, excepturi totam distinctio
-            pariatur nulla voluptatem dignissimos officia. Totam temporibus,
-            illo quae expedita fuga corporis unde nesciunt!
-          </p>
+            <p>
+              Blanditiis dolore, odio adipisci dolorum, excepturi totam
+              distinctio pariatur nulla voluptatem dignissimos officia. Totam
+              temporibus, illo quae expedita fuga corporis unde nesciunt!
+            </p>
+          </div>
         </div>
-        <Link to="/testimonials">View All</Link>
       </div>
+      <Link to="/testimonials">View All</Link>
     </div>
   );
 };

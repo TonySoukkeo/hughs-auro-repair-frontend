@@ -3,12 +3,20 @@
   BANNER
   *******/
   &__banner {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-image: url("../images/banner_1.jpg");
     background-size: cover;
     background-position: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
+
+    @include respond(medium) {
+      flex-direction: row;
+      height: 24rem;
+      padding-top: 4rem;
+    }
 
     &::after {
       content: "";
@@ -28,12 +36,23 @@
       flex-direction: column;
       align-items: center;
 
+      @include respond(medium) {
+        align-items: flex-start;
+        padding-left: 4rem;
+        width: 50%;
+      }
+
       h1 {
         text-align: center;
         color: #fff;
         width: calc(100% - 2rem);
         font-size: 2.3rem;
         margin-bottom: 1rem;
+
+        @include respond(medium) {
+          text-align: left;
+          font-size: 3rem;
+        }
       }
 
       a {
@@ -43,6 +62,51 @@
       }
     }
 
+    // Quote for desktio view
+    &-quote-desktop {
+      display: none;
+      position: absolute;
+      z-index: 5;
+      right: 4rem;
+      background-color: $color-dark-primary;
+      width: 40%;
+      padding: 9rem 1rem 2rem 1rem;
+      border-radius: 4px;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+
+      @include respond(medium) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        margin-top: 1rem;
+        align-self: flex-end;
+      }
+
+      &-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-weight: normal;
+        color: #fff;
+        background-color: $color-blue-primary;
+        padding-top: 0.8rem;
+        padding-bottom: 1.4rem;
+
+        svg {
+          position: absolute;
+          bottom: -1.5rem;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    // Quote for mobile view
     &-quote-mobile {
       position: relative;
       z-index: 5;
@@ -50,6 +114,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @include respond(medium) {
+        display: none;
+      }
 
       &--header {
         display: flex;
@@ -88,10 +156,40 @@
   INTRO
   *****/
   &__intro {
-    h2 {
-      font-size: 1.2rem;
-      position: relative;
-      margin-bottom: 1rem;
+    @include respond(medium) {
+      display: flex;
+      padding-top: 5rem;
+      justify-content: space-between;
+
+      &-content {
+        width: calc(60% - 1rem);
+      }
+    }
+
+    &-content {
+      h2 {
+        font-size: 1.2rem;
+        position: relative;
+        margin-bottom: 1rem;
+
+        @include respond(medium) {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &-image {
+      display: none;
+      width: calc(40% - 1rem);
+      height: 20vw;
+      background-image: url("../images/intro.jpg");
+      background-size: cover;
+      background-position: center;
+      box-shadow: $box-shadow;
+
+      @include respond(medium) {
+        display: block;
+      }
     }
   }
 
@@ -106,9 +204,24 @@
       flex-direction: column;
       margin-bottom: 1rem;
 
+      @include respond(medium) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        &--header {
+          width: 35%;
+          border-right: 1px solid $color-tan-primary;
+          // background-color: yellow;
+        }
+      }
+
       h5 {
         color: $color-tan-primary;
         font-size: 0.8rem;
+
+        @include respond(medium) {
+          font-size: 1rem;
+        }
       }
 
       h4,
@@ -120,6 +233,17 @@
         width: 70%;
         font-size: 1.2rem;
         margin-bottom: 1rem;
+
+        @include respond(medium) {
+          font-size: 1.5rem;
+          width: 100%;
+        }
+      }
+
+      p {
+        @include respond(medium) {
+          width: 60%;
+        }
       }
     }
 
@@ -127,28 +251,43 @@
       display: flex;
       flex-direction: column;
 
-      &--card {
-        background: #fff;
-        border-radius: 4px;
-        padding: 1rem;
+      &--showcase {
+        @include respond(medium) {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 2rem;
+        }
 
-        &:not(:last-child) {
+        &-card {
+          background: #fff;
+          border-radius: 4px;
+          padding: 1rem;
+
+          @include respond(medium) {
+            width: calc(33.33% - 1rem);
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 1rem;
+            @include respond(medium) {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        h1 {
           margin-bottom: 1rem;
         }
-      }
 
-      h1 {
-        margin-bottom: 1rem;
+        p {
+          font-size: 1.1rem;
+        }
       }
+    }
 
-      p {
-        font-size: 1.1rem;
-      }
-
-      a {
-        margin-top: 1rem;
-        align-self: center;
-      }
+    a {
+      margin-top: 2rem;
+      align-self: center;
     }
   }
 
@@ -156,6 +295,8 @@
     TESTIMONIALS
   ***************/
   &__testimonials {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-color: $color-dark-primary;
     z-index: 1;
@@ -174,6 +315,10 @@
       h5 {
         color: $color-tan-primary;
         font-size: 0.8rem;
+
+        @include respond(medium) {
+          font-size: 1rem;
+        }
       }
 
       h4,
@@ -185,6 +330,10 @@
         width: 70%;
         font-size: 1.2rem;
         margin-bottom: 1rem;
+
+        @include respond(medium) {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -192,11 +341,21 @@
       display: flex;
       flex-direction: column;
 
-      h5 {
-        font-weight: lighter;
-        font-size: 1rem;
-        color: #fff;
-        margin-bottom: 1rem;
+      @include respond(medium) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      &--container {
+        @include respond(medium) {
+          width: calc(50% - 1rem);
+        }
+        h5 {
+          font-weight: lighter;
+          font-size: 1rem;
+          color: #fff;
+          margin-bottom: 1rem;
+        }
       }
 
       &--content {
@@ -217,13 +376,13 @@
           transform: rotate(45deg);
         }
       }
+    }
 
-      a {
-        align-self: center;
-        color: $color-tan-primary;
-        text-decoration: none;
-        border-bottom: 1px solid $color-tan-primary;
-      }
+    a {
+      align-self: center;
+      color: $color-tan-primary;
+      text-decoration: none;
+      border-bottom: 1px solid $color-tan-primary;
     }
   }
 
@@ -231,21 +390,37 @@
     BLOG
   ********/
   &__blog {
+    @include respond(medium) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
     text-align: center;
 
     span i {
       font-size: 6rem;
       color: $color-tan-primary;
       margin-bottom: 1rem;
+
+      @include respond(medium) {
+        font-size: 10rem;
+      }
     }
 
     h3 {
       margin-bottom: 1rem;
+
+      @include respond(medium) {
+        font-size: 2rem;
+      }
     }
 
     a {
       border-radius: 4rem;
       font-size: 0.8rem;
+
+      @include respond(medium) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -258,8 +433,12 @@
     position: relative;
     background-color: $color-dark-tertiary;
     margin-top: 1rem;
-    padding-top: 8rem;
+    padding-top: 6rem;
     padding-bottom: 2rem;
+
+    @include respond(medium) {
+      padding-top: 10rem;
+    }
 
     svg {
       position: absolute;
@@ -271,6 +450,10 @@
       h5 {
         color: $color-tan-primary;
         font-size: 0.8rem;
+
+        @include respond(medium) {
+          font-size: 1rem;
+        }
       }
 
       h4,
@@ -282,6 +465,10 @@
         width: 70%;
         font-size: 1.2rem;
         margin-bottom: 1rem;
+
+        @include respond(medium) {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -289,13 +476,28 @@
       display: flex;
       flex-direction: column;
 
+      @include respond(medium) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
       img {
         width: 100%;
         height: 20rem;
         border: 1px solid $color-tan-primary;
+        object-fit: cover;
+        object-position: center;
+
+        @include respond(medium) {
+          width: calc(33.333% - 1rem);
+        }
 
         &:not(:last-child) {
           margin-bottom: 1.5rem;
+
+          @include respond(medium) {
+            margin-bottom: 0;
+          }
         }
       }
     }

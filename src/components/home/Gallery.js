@@ -15,11 +15,11 @@ const Gallery = () => {
         x="0px"
         y="0px"
         width="100%"
-        viewBox="0 0 1242 225.515"
-        enable-background="new 0 0 1242 225.515"
+        viewBox="0 0 1242 111.556"
+        enable-background="new 0 0 1242 111.556"
       >
-        <rect y="0.938" fill="#FFFFFF" width="1242" height="224.576" />
-        <path fill="#323232" d="M0,225.515c0,0,602-505.297,1242,0H0z" />
+        <rect fill="#FFFFFF" width="1242" height="111.556" />
+        <path fill="#323232" d="M1242,111.556c0,0-540-251-1242,0H1242z" />
       </svg>
 
       <div className="home__gallery-header">

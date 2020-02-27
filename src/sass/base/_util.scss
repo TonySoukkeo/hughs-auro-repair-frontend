@@ -84,3 +84,9 @@
     background-color: $color-blue-primary;
   }
 }
+
+.object-fit {
+  &__cover {
+    object-fit: cover;
+  }
+}

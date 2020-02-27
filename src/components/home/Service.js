@@ -5,8 +5,10 @@ const Service = () => {
   return (
     <div className="home__services container">
       <div className="home__services-description">
-        <h5>What we offer</h5>
-        <h4>Our service plans to meet all of your demands</h4>
+        <div className="home__services-description--header">
+          <h5>What we offer</h5>
+          <h4>Our service plans to meet all of your demands</h4>
+        </div>
 
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
@@ -19,43 +21,45 @@ const Service = () => {
       </div>
 
       <div className="home__services-options">
-        <div className="home__services-options--card">
-          <h1>
-            Service 1<span className="underline underline--blue"></span>
-          </h1>
+        <div className="home__services-options--showcase">
+          <div className="home__services-options--showcase-card">
+            <h1>
+              Service 1<span className="underline underline--blue"></span>
+            </h1>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-            quod maxime eius est fugit porro, veritatis fuga ipsum? Ullam ea
-            porro reprehenderit facere sed distinctio illo incidunt assumenda
-            quasi aspernatur?
-          </p>
-        </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus quod maxime eius est fugit porro, veritatis fuga
+              ipsum? Ullam ea porro reprehenderit facere sed distinctio illo
+              incidunt assumenda quasi aspernatur?
+            </p>
+          </div>
 
-        <div className="home__services-options--card">
-          <h1>
-            Service 2<span className="underline underline--blue"></span>
-          </h1>
+          <div className="home__services-options--showcase-card">
+            <h1>
+              Service 2<span className="underline underline--blue"></span>
+            </h1>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-            quod maxime eius est fugit porro, veritatis fuga ipsum? Ullam ea
-            porro reprehenderit facere sed distinctio illo incidunt assumenda
-            quasi aspernatur?
-          </p>
-        </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus quod maxime eius est fugit porro, veritatis fuga
+              ipsum? Ullam ea porro reprehenderit facere sed distinctio illo
+              incidunt assumenda quasi aspernatur?
+            </p>
+          </div>
 
-        <div className="home__services-options--card">
-          <h1>
-            Service 3<span className="underline underline--blue"></span>
-          </h1>
+          <div className="home__services-options--showcase-card">
+            <h1>
+              Service 3<span className="underline underline--blue"></span>
+            </h1>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-            quod maxime eius est fugit porro, veritatis fuga ipsum? Ullam ea
-            porro reprehenderit facere sed distinctio illo incidunt assumenda
-            quasi aspernatur?
-          </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus quod maxime eius est fugit porro, veritatis fuga
+              ipsum? Ullam ea porro reprehenderit facere sed distinctio illo
+              incidunt assumenda quasi aspernatur?
+            </p>
+          </div>
         </div>
 
         <Link to="/services" className="btn btn--blue">
