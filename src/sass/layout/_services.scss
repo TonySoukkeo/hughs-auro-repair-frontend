@@ -1,0 +1,36 @@
+.services {
+  &__banner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: url("../images/service_page_banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 12rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &-text {
+      position: relative;
+      z-index: 1;
+
+      h5 {
+        color: $color-tan-primary;
+        font-size: 1.2rem;
+      }
+
+      h4 {
+        color: #fff;
+        font-size: 2rem;
+      }
+    }
+  }
+}
