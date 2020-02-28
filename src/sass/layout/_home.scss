@@ -46,7 +46,7 @@
         text-align: center;
         color: #fff;
         width: calc(100% - 2rem);
-        font-size: 2.3rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
 
         @include respond(medium) {
@@ -126,20 +126,20 @@
         margin-bottom: 1rem;
 
         div {
-          width: 6rem;
+          width: 4rem;
           height: 0.1rem;
           background-color: $color-tan-primary;
         }
 
         h4 {
           margin: 0 1rem;
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #fff;
         }
       }
 
       a {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
       }
     }
   }

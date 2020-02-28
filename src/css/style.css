@@ -450,7 +450,7 @@ body {
         text-align: center;
         color: #fff;
         width: calc(100% - 2rem);
-        font-size: 2.3rem;
+        font-size: 2rem;
         margin-bottom: 1rem; }
         @media only screen and (min-width: 60em) {
           .home__banner-header h1 {
@@ -510,15 +510,15 @@ body {
         justify-content: center;
         margin-bottom: 1rem; }
         .home__banner-quote-mobile--header div {
-          width: 6rem;
+          width: 4rem;
           height: 0.1rem;
           background-color: #ffd58c; }
         .home__banner-quote-mobile--header h4 {
           margin: 0 1rem;
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #fff; }
       .home__banner-quote-mobile a {
-        font-size: 0.7rem; }
+        font-size: 0.6rem; }
   .home__intro, .home__services, .home__testimonials, .home__blog {
     padding-top: 2rem;
     padding-bottom: 2rem; }
@@ -891,10 +891,17 @@ body {
   justify-content: center;
   align-items: center; }
   .services__quote h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem; }
+    @media only screen and (min-width: 60em) {
+      .services__quote h2 {
+        font-size: 1.8rem; } }
   .services__quote a {
+    font-size: 0.8rem;
     box-shadow: 2px 2px 10px -1px #000000; }
+    @media only screen and (min-width: 60em) {
+      .services__quote a {
+        font-size: 1rem; } }
 
 .about__header {
   display: flex;
@@ -902,7 +909,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #edecec;
-  padding: 3rem 0; }
+  text-align: center;
+  padding: 3rem 2rem; }
   .about__header h1 {
     display: flex;
     align-items: center;
@@ -986,7 +994,7 @@ body {
   justify-content: center;
   padding: 4rem 0; }
   .contact__quote h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: #fff;
     margin-bottom: 1rem; }
 
@@ -998,7 +1006,7 @@ body {
   padding-top: 2rem;
   padding-bottom: 2rem; }
   .contact__social h2 {
-    font-size: 1.8rem; }
+    font-size: 1.5rem; }
   .contact__social a {
     font-size: 5rem;
     color: #3b5998; }

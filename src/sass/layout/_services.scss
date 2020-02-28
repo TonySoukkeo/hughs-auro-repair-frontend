@@ -195,12 +195,21 @@
     align-items: center;
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
+
+      @include respond(medium) {
+        font-size: 1.8rem;
+      }
     }
 
     a {
+      font-size: 0.8rem;
       box-shadow: $box-shadow;
+
+      @include respond(medium) {
+        font-size: 1rem;
+      }
     }
   }
 }
