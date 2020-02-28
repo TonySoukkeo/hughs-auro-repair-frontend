@@ -40,7 +40,19 @@
 
 // Margins
 .mt-sm {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
+}
+
+.mt-md {
+  margin-top: 2rem !important;
+}
+
+.mb-md {
+  margin-bottom: 2rem !important;
+}
+
+.mt-lg {
+  margin-top: 5rem !important;
 }
 
 // Btns
@@ -50,6 +62,7 @@
   padding: 0.3rem 0.8rem;
   border-radius: 5px;
   transition: all 0.1s ease-in;
+  box-shadow: $box-shadow;
 
   &--blue {
     background-color: $color-blue-primary;
@@ -63,6 +76,12 @@
     &:hover {
       background-color: $color-tan-2;
     }
+  }
+
+  &--white {
+    color: $color-grey-dark;
+    background-color: #fff;
+    border-radius: 10rem;
   }
 
   &:active {

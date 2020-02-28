@@ -9,6 +9,7 @@ const About = () => {
         </h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
       </header>
+
       <div className="about__content container">
         <h1>About</h1>
         <p>

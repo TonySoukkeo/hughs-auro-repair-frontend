@@ -3,6 +3,14 @@
     margin-bottom: 1rem;
   }
 
+  &__group-textarea {
+    position: relative;
+    height: 10rem;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid $color-grey-light-2;
+  }
+
   &__input {
     width: 100%;
     font-size: 1rem;
@@ -10,5 +18,26 @@
     outline: none;
     border: none;
     border-radius: 4px;
+  }
+
+  &__input-noborder,
+  &__input-textarea {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+
+  &__input-noborder {
+    border-bottom: 1px solid $color-grey-light-2;
+    padding-bottom: 0.3rem;
+  }
+
+  &__input-textarea {
+    position: absolute;
+    height: 10rem;
+    bottom: -8.6rem;
+    width: 100%;
   }
 }

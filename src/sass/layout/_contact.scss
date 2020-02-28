@@ -1,0 +1,103 @@
+.contact {
+  &__form-container {
+    @include respond(medium) {
+      display: flex;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @include respond(medium) {
+      width: 50%;
+    }
+
+    h2,
+    p {
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    button {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__form-question {
+    visibility: hidden;
+    background-color: rgba($color-tan-primary, 0.5);
+
+    span {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 10rem;
+      font-weight: bold;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background-color: $color-blue-primary;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 13rem;
+        height: 13rem;
+        border-radius: 50%;
+        border: 1px solid $color-blue-primary;
+      }
+    }
+
+    @include respond(medium) {
+      visibility: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+    }
+  }
+
+  &__quote {
+    background-color: $color-blue-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+
+    h1 {
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    a {
+      font-size: 5rem;
+      color: $color-blue-dark-2;
+    }
+  }
+}
