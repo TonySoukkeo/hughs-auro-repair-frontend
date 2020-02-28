@@ -7,6 +7,7 @@ import NavigationDesktop from "./components/navigation/NavigationDesktop";
 import Home from "./layout/Home";
 import Footer from "./components/footer/Footer";
 import Services from "./layout/Services";
+import About from "./layout/About";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/services" component={Services} />
+          <Route exact path="/about" component={About} />
         </Switch>
         <Footer />
       </div>
