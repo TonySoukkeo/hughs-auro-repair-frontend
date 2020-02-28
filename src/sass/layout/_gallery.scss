@@ -1,0 +1,71 @@
+.gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include respond(medium) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__image-container {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+
+    @include respond(medium) {
+      &:hover {
+        transform: scale(0.98);
+        border: 1px solid $color-tan-primary;
+        box-shadow: $box-shadow;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__modal {
+    position: absolute;
+    padding: 0.6rem;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: 95;
+    transition: all 0.3s ease-in;
+
+    @include respond(medium) {
+      height: 40rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    span {
+      position: absolute;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      top: 1rem;
+      right: 1rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 0.5rem;
+      border-radius: 3px;
+    }
+  }
+}

@@ -24,6 +24,8 @@
   }
 
   &__icon-container {
+    height: 1.5rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
 
@@ -83,7 +85,7 @@
 
   &__list {
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     list-style-type: none;
     padding: 5rem 1rem 1rem 1rem;
     top: 0;

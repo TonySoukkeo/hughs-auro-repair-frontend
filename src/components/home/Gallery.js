@@ -16,7 +16,7 @@ const Gallery = () => {
         y="0px"
         width="100%"
         viewBox="0 0 1242 111.556"
-        enable-background="new 0 0 1242 111.556"
+        enableackground="new 0 0 1242 111.556"
       >
         <rect fill="#FFFFFF" width="1242" height="111.556" />
         <path fill="#323232" d="M1242,111.556c0,0-540-251-1242,0H1242z" />

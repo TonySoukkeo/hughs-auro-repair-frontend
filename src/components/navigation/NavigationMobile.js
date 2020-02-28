@@ -28,7 +28,10 @@ const NavigationMobile = () => {
           <h2>Hugh's Diesel & Auto Repair</h2>
         </Link>
 
-        <div className="navigation-mobile__icon-container">
+        <div
+          onClick={toggleCheck}
+          className="navigation-mobile__icon-container"
+        >
           <input
             onChange={toggleCheck}
             id="toggleNav"

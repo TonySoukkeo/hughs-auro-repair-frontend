@@ -44,7 +44,7 @@ const Banner = () => {
             y="0px"
             width="100%"
             viewBox="0 0 1242 111.556"
-            enable-background="new 0 0 1242 111.556"
+            enableBackground="new 0 0 1242 111.556"
           >
             <rect fill="#252122" width="100%" height="111.556" />
             <path fill="#4280C2" d="M0,0c0,0,540,251,1242,0H0z" />

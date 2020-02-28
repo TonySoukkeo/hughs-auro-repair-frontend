@@ -38,7 +38,7 @@ const ServiceShowcase = () => {
           y="0px"
           width="100%"
           viewBox="0 0 1242 136.482"
-          enable-background="new 0 0 1242 136.482"
+          enableBackground="new 0 0 1242 136.482"
         >
           <polygon fill="#4280C2" points="0,-1 0,-1 1242,136.482 1242,-1 " />
         </svg>
@@ -52,7 +52,7 @@ const ServiceShowcase = () => {
           y="0px"
           width="100%"
           viewBox="0 0 1242 136.482"
-          enable-background="new 0 0 1242 136.482"
+          enableBackground="new 0 0 1242 136.482"
         >
           <polygon
             fill="#323232"

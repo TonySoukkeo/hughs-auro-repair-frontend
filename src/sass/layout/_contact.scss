@@ -36,35 +36,35 @@
     visibility: hidden;
     background-color: rgba($color-tan-primary, 0.5);
 
-    span {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 10rem;
-      font-weight: bold;
-      width: 12rem;
-      height: 12rem;
-      border-radius: 50%;
-      background-color: $color-blue-primary;
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 13rem;
-        height: 13rem;
-        border-radius: 50%;
-        border: 1px solid $color-blue-primary;
-      }
-    }
-
     @include respond(medium) {
       visibility: visible;
       display: flex;
       align-items: center;
       justify-content: center;
       width: 50%;
+
+      span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 10rem;
+        font-weight: bold;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        background-color: $color-blue-primary;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 13rem;
+          height: 13rem;
+          border-radius: 50%;
+          border: 1px solid $color-blue-primary;
+        }
+      }
     }
   }
 
