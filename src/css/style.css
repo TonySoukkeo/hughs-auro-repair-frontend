@@ -738,10 +738,28 @@ body {
       color: #fff;
       font-size: 2rem; }
 
+@media only screen and (min-width: 60em) {
+  .services__desc {
+    width: calc(75% - 1rem); } }
+
+.services__circle {
+  display: flex;
+  justify-content: center; }
+  @media only screen and (min-width: 60em) {
+    .services__circle {
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(25% - 1rem);
+      border-right: 1px solid #fff; } }
+
 .services__1, .services__2, .services__3 {
   position: relative;
   display: flex;
   flex-direction: column; }
+  @media only screen and (min-width: 60em) {
+    .services__1, .services__2, .services__3 {
+      flex-direction: row;
+      justify-content: space-between; } }
   .services__1 span, .services__2 span, .services__3 span {
     position: relative;
     display: flex;
@@ -771,7 +789,6 @@ body {
   .services__1 p {
     color: #fff; }
   .services__1 span {
-    align-self: center;
     background-color: #fff;
     margin-bottom: 1.5rem; }
     .services__1 span::after {
@@ -789,14 +806,28 @@ body {
   .services__2--svg-bottom {
     bottom: 0;
     left: 0; }
-  .services__2 span {
+  @media only screen and (min-width: 60em) {
+    .services__2 {
+      padding-bottom: 15rem; }
+      .services__2 .services__desc {
+        width: 70%;
+        border-right: 1px solid #ffd58c;
+        padding-right: 1rem; } }
+  .services__2 .services__circle {
     position: absolute;
     top: -2rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ffd58c; }
-    .services__2 span::after {
-      border: 1px solid #ffd58c; }
+    width: 9rem;
+    border-right: none; }
+    @media only screen and (min-width: 60em) {
+      .services__2 .services__circle {
+        top: 1rem;
+        left: 85%; } }
+    .services__2 .services__circle span {
+      background-color: #ffd58c; }
+      .services__2 .services__circle span::after {
+        border: 1px solid #ffd58c; }
 
 .services__3 {
   background-color: #323232;
@@ -805,8 +836,19 @@ body {
   .services__3 p {
     color: #fff; }
   .services__3 span {
-    align-self: center;
     background-color: #fff;
     margin-bottom: 1.5rem; }
     .services__3 span::after {
       border: 1px solid #fff; }
+
+.services__quote {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .services__quote h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem; }
+  .services__quote a {
+    box-shadow: 2px 2px 10px -1px #000000; }

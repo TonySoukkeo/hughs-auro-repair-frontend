@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Components
 import Banner from "../components/services/Banner";
@@ -8,9 +9,11 @@ const Services = () => {
     <section className="services">
       <Banner />
       <div className="services__1 container">
-        <span>
-          <h2>Service 1</h2>
-        </span>
+        <div className="services__circle">
+          <span>
+            <h2>Service 1</h2>
+          </span>
+        </div>
 
         <div className="services__desc">
           <p>
@@ -61,10 +64,11 @@ const Services = () => {
             points="1242,136.982 1242,136.982 0,-0.5 0,136.982 "
           />
         </svg>
-
-        <span>
-          <h2>Service 2</h2>
-        </span>
+        <div className="services__circle">
+          <span>
+            <h2>Service 2</h2>
+          </span>
+        </div>
 
         <div className="services__desc">
           <p>
@@ -85,9 +89,11 @@ const Services = () => {
       </div>
 
       <div className="services__3 container">
-        <span>
-          <h2>Service 3</h2>
-        </span>
+        <div className="services__circle">
+          <span>
+            <h2>Service 3</h2>
+          </span>
+        </div>
 
         <div className="services__desc">
           <p>
@@ -105,6 +111,14 @@ const Services = () => {
             dolorum maiores corrupti.
           </p>
         </div>
+      </div>
+
+      <div className="services__quote">
+        <h2>Need a quote? Get started here</h2>
+
+        <Link className="btn btn--blue" to="/quote">
+          Lets do this
+        </Link>
       </div>
     </section>
   );

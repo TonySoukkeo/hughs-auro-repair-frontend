@@ -35,6 +35,21 @@
   }
 
   &__desc {
+    @include respond(medium) {
+      width: calc(75% - 1rem);
+    }
+  }
+
+  &__circle {
+    display: flex;
+    justify-content: center;
+
+    @include respond(medium) {
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(25% - 1rem);
+      border-right: 1px solid #fff;
+    }
   }
 
   &__1,
@@ -43,6 +58,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
+
+    @include respond(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     span {
       position: relative;
@@ -83,7 +103,6 @@
     }
 
     span {
-      align-self: center;
       background-color: #fff;
       margin-bottom: 1.5rem;
 
@@ -118,15 +137,34 @@
       left: 0;
     }
 
-    span {
+    @include respond(medium) {
+      padding-bottom: 15rem;
+      .services__desc {
+        width: 70%;
+        border-right: 1px solid $color-tan-primary;
+        padding-right: 1rem;
+      }
+    }
+
+    .services__circle {
       position: absolute;
       top: -2rem;
       left: 50%;
       transform: translateX(-50%);
-      background-color: $color-tan-primary;
+      width: 9rem;
+      border-right: none;
 
-      &::after {
-        border: 1px solid $color-tan-primary;
+      @include respond(medium) {
+        top: 1rem;
+        left: 85%;
+      }
+
+      span {
+        background-color: $color-tan-primary;
+
+        &::after {
+          border: 1px solid $color-tan-primary;
+        }
       }
     }
   }
@@ -140,13 +178,29 @@
     }
 
     span {
-      align-self: center;
       background-color: #fff;
       margin-bottom: 1.5rem;
 
       &::after {
         border: 1px solid #fff;
       }
+    }
+  }
+
+  &__quote {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      box-shadow: $box-shadow;
     }
   }
 }
