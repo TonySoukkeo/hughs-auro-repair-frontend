@@ -63,6 +63,12 @@ body {
   border-radius: 5px;
   transition: all 0.1s ease-in;
   box-shadow: 2px 2px 10px -1px #000000; }
+  .btn--disabled {
+    cursor: default;
+    color: #252122;
+    border: 1px solid #3f3f3f !important;
+    background-color: #fff;
+    box-shadow: none; }
   .btn--blue {
     background-color: #4380c2; }
   .btn--tan {
@@ -110,6 +116,16 @@ body {
 
 .object-fit__cover {
   object-fit: cover; }
+
+.alert {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 3px; }
+  .alert--err {
+    background-color: #fff;
+    border: 1px solid #c01e1e; }
 
 .navigation-mobile {
   position: sticky;
@@ -396,6 +412,8 @@ body {
   outline: none;
   border: none;
   border-radius: 4px; }
+  .form__input--border {
+    border: 1px solid #252122; }
 
 .form__input-noborder, .form__input-textarea {
   width: 100%;
@@ -1152,3 +1170,23 @@ body {
     margin-top: 1rem; }
     .blog__buttons-container button:not(:last-child) {
       margin-right: 1rem; }
+
+.admin {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .admin h2 {
+    text-align: center;
+    margin-bottom: 1rem; }
+    .admin h2 span {
+      margin-right: 1rem; }
+  .admin form {
+    width: 90%;
+    margin: 0 auto; }
+    @media only screen and (min-width: 60em) {
+      .admin form {
+        width: 60%; } }
+  .admin button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1rem; }

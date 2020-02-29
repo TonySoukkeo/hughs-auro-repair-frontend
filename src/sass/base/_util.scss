@@ -64,6 +64,14 @@
   transition: all 0.1s ease-in;
   box-shadow: $box-shadow;
 
+  &--disabled {
+    cursor: default;
+    color: $color-dark-primary;
+    border: 1px solid $color-grey-dark !important;
+    background-color: #fff;
+    box-shadow: none;
+  }
+
   &--blue {
     background-color: $color-blue-primary;
   }
@@ -129,5 +137,19 @@
 .object-fit {
   &__cover {
     object-fit: cover;
+  }
+}
+
+// Alerts
+.alert {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 3px;
+
+  &--err {
+    background-color: #fff;
+    border: 1px solid $color-red;
   }
 }
