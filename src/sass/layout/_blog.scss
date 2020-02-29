@@ -1,0 +1,95 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  &__grid-container {
+    display: grid;
+    grid-row-gap: 1rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-gap: 1rem;
+
+    &--card {
+      padding: 4rem 1rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      background-color: $color-dark-primary;
+
+      &-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $color-blue-primary;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        font-size: 1.3rem;
+      }
+
+      &-body {
+        color: #fff;
+      }
+
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        position: absolute;
+        width: calc(100% - 2rem);
+        bottom: 0;
+
+        a {
+          text-decoration: none;
+          color: $color-tan-primary;
+        }
+
+        span {
+          color: #fff;
+          font-style: italic;
+          font-weight: lighter;
+        }
+      }
+
+      @include respond(medium) {
+        height: 100%;
+      }
+    }
+
+    @include respond(medium) {
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(6, 4rem);
+
+      &--card:nth-child(1) {
+        grid-column: 1 / 5;
+        grid-row: 1 / -1;
+      }
+
+      &--card:nth-child(2) {
+        grid-column: 5 / -1;
+        grid-row: 1 / 4;
+      }
+
+      &--card:nth-child(3) {
+        grid-column: 5 / -1;
+        grid-row: 4 / -1;
+      }
+    }
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+    button {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

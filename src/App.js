@@ -10,6 +10,7 @@ import Services from "./layout/Services";
 import About from "./layout/About";
 import Contact from "./layout/Contact";
 import Gallery from "./layout/Gallery";
+import Blog from "./layout/Blog";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/blog" component={Blog} />
         </Switch>
         <Footer />
       </div>

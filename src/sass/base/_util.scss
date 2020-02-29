@@ -88,6 +88,28 @@
     transform: scale(0.9);
   }
 }
+.btn-prev,
+.btn-next {
+  outline: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid $color-grey;
+  color: $color-grey-2;
+
+  &--active {
+    cursor: pointer;
+    border: none;
+    background-color: $color-blue-primary;
+    color: #fff;
+    transition: all 0.1s;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
 
 // Fonts
 .text-bold {
