@@ -1,6 +1,6 @@
 import { SET_AUTH } from "../constants/AuthConstants";
 
-export const postLogin = async (email, password) => {
+export const postLogin = async (email, password, dispatch) => {
   try {
     // Check for any empty fields
     if (!email) {
@@ -46,6 +46,15 @@ export const postLogin = async (email, password) => {
     localStorage.setItem("userId", loginData.user._id);
 
     localStorage.setItem("token", loginData.token);
+
+    dispatch({
+      type: SET_AUTH,
+      payload: {
+        isAuth: true,
+        token: loginData.token,
+        user: loginData.user
+      }
+    });
 
     return loginData;
   } catch (err) {

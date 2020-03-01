@@ -57,6 +57,7 @@
 
 // Btns
 .btn {
+  cursor: pointer;
   text-decoration: none;
   color: #fff;
   padding: 0.3rem 0.8rem;
@@ -150,6 +151,6 @@
 
   &--err {
     background-color: #fff;
-    border: 1px solid $color-red;
+    border: 2px solid $color-red;
   }
 }

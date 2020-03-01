@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../../images/logo.png";
 
+// Context
+import { StateContext } from "../../context/StateProvider";
+
 const NavigationDesktop = () => {
   const [aboutSub, setAboutSub] = useState(false);
+
+  const { isAuth } = useContext(StateContext);
 
   const toggleAboutSub = () => {
     setAboutSub(prevState => !prevState);
@@ -91,6 +96,17 @@ const NavigationDesktop = () => {
           Contact
           <span></span>
         </Link>
+
+        {isAuth ? (
+          <Link
+            onClick={disableSubNav}
+            to="/dashboard"
+            className="navigation-desktop__item"
+          >
+            Admin
+            <span></span>
+          </Link>
+        ) : null}
 
         <Link onClick={disableSubNav} to="/quote" className="btn btn--blue">
           Get a quote

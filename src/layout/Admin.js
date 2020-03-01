@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 
@@ -13,7 +13,7 @@ import { postLogin } from "../reducers/actions/AuthActions";
 import { DispatchContext } from "../context/StateProvider";
 import { StateContext } from "../context/StateProvider";
 
-const Admin = ({ history }) => {
+const Admin = () => {
   const [login, setLogin] = useState({ email: "", password: "" });
 
   const { email, password } = login;
@@ -61,8 +61,6 @@ const Admin = ({ history }) => {
       });
 
       setLoading(false);
-
-      history.push("/");
     } catch (err) {
       setLoading(false);
       setLogin(prevState => ({
@@ -128,7 +126,7 @@ const Admin = ({ history }) => {
             </form>
           </section>
         ) : (
-          <Redirect to="/" />
+          <Redirect to="/dashboard" />
         )
       }
     ></Route>

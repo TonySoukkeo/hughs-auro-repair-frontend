@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 // Components
-import BlogCards from "../components/blog/BlogCards";
-import Loading from "../components/loading/Loading";
+import BlogCards from "../../components/blog/BlogCards";
+import Loading from "../../components/loading/Loading";
 
 // Custom hooks
-import useLoading from "../hooks/useLoading";
+import useLoading from "../../hooks/useLoading";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);

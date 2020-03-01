@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 // Components
 import Overlay from "../overlay/Overlay";
-
 import Logo from "../../images/logo.png";
+
+// Context
+import { StateContext } from "../../context/StateProvider";
 
 const NavigationMobile = () => {
   const [checked, setChecked] = useState(false);
   const [aboutSub, setAboutSub] = useState(false);
+
+  const { isAuth } = useContext(StateContext);
 
   const toggleCheck = () => {
     setChecked(prevState => !prevState);
@@ -122,6 +126,16 @@ const NavigationMobile = () => {
         >
           Contact
         </Link>
+
+        {isAuth ? (
+          <Link
+            to="/dashboard"
+            onClick={toggleCheck}
+            className="navigation-mobile__item"
+          >
+            Admin
+          </Link>
+        ) : null}
 
         {/*** LOGO ***/}
         <div className="flex flex--center mt-sm">

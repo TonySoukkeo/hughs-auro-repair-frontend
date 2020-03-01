@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 
 const BlogCards = ({ title, blogId, postedDate, body }) => {
+  const modifyBody = body.length > 360 ? body.slice(0, 360) + "..." : body;
+
   return (
     <div className="blog__grid--card">
       <div className="blog__grid--card-title">{title}</div>
 
       <div className="blog__grid--card-body">
-        <p>{body}</p>
+        <p>{modifyBody}</p>
       </div>
 
       <div className="blog__grid--card-footer">

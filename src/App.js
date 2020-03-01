@@ -10,8 +10,11 @@ import Services from "./layout/Services";
 import About from "./layout/About";
 import Contact from "./layout/Contact";
 import Gallery from "./layout/Gallery";
-import Blog from "./layout/Blog";
+import Blog from "./layout/blog/Blog";
 import Admin from "./layout/Admin";
+import Dashboard from "./layout/dashboard/Dashboard";
+import AddPost from "./layout/dashboard/AddPost";
+import ViewBlog from "./layout/blog/ViewBlog";
 
 // Context
 import { DispatchContext } from "./context/StateProvider";
@@ -51,7 +54,10 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/blog" component={Blog} />
+          <Route exact path="/blog/:id" component={ViewBlog} />
           <Route exact path="/admin" component={Admin} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard/add-post" component={AddPost} />
         </Switch>
         <Footer />
       </div>
