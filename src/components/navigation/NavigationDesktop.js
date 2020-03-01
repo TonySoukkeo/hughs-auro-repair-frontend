@@ -72,7 +72,7 @@ const NavigationDesktop = () => {
                 Our story
               </Link>
 
-              <Link to="gallery" className="navigation-desktop__sub-item">
+              <Link to="/gallery" className="navigation-desktop__sub-item">
                 Gallery
               </Link>
             </ul>

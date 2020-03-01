@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Route, Redirect, Link } from "react-router-dom";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 // Context
 import { StateContext } from "../../context/StateProvider";
@@ -74,6 +75,7 @@ const AddPost = () => {
         title: "",
         body: ""
       });
+
       setBlogId(postData.id);
       setLoading(false);
     } catch (err) {
@@ -146,6 +148,18 @@ const AddPost = () => {
             ) : (
               <div className="dashboard__success">
                 <h3>Post added!</h3>
+
+                <FacebookShareButton
+                  url={`${process.env.REACT_APP_BASE_URL}/blog/${blogId}`}
+                  resetButtonStyle={false}
+                  className="dashboard__share"
+                  children={
+                    <span className="dashboard__share-btn">
+                      <FacebookIcon round={true} size={80} />
+                      <p>Share this post on Facebook</p>
+                    </span>
+                  }
+                />
 
                 <p onClick={() => setBlogId("")}>Add another post</p>
 

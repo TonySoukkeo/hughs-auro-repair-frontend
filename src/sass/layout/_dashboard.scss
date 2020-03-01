@@ -146,12 +146,22 @@
     a {
       color: $color-blue-dark-2;
       font-weight: bold;
+      text-decoration: none;
     }
 
     p {
       cursor: pointer;
-      text-decoration: underline;
       margin-bottom: 1rem;
+    }
+  }
+
+  &__share {
+    &-btn {
+      p {
+        margin-top: 1rem;
+        text-decoration: none;
+        color: $color-dark-primary;
+      }
     }
   }
 }
