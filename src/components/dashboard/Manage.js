@@ -20,10 +20,10 @@ const Manage = ({ type }) => {
               <p>Add new Post</p>
             </Link>
 
-            <span>
+            <Link to="/dashboard/view-posts">
               <i className="far fa-edit"></i>
               <p>View / Edit Posts</p>
-            </span>
+            </Link>
           </React.Fragment>
         ) : (
           <React.Fragment>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Route, Redirect } from "react-router-dom";
 
 // hooks
 import useError from "../../hooks/useError";
@@ -21,7 +22,7 @@ const EditPost = ({ match, history }) => {
   const [loading, setLoading, loadingType, setLoadingType] = useLoading();
   const [error, setError] = useError();
 
-  const { token } = useContext(StateContext);
+  const { token, isAuth } = useContext(StateContext);
 
   const { title, body } = input;
 
@@ -62,6 +63,13 @@ const EditPost = ({ match, history }) => {
     };
 
     getPost();
+
+    return () => {
+      setInput({
+        title: "",
+        body: ""
+      });
+    };
   }, []);
 
   const onChange = e => {
@@ -115,63 +123,79 @@ const EditPost = ({ match, history }) => {
   };
 
   return (
-    <section className="blog__edit container">
-      {error ? <div className="alert alert--err mb-md">{error}</div> : null}
+    <Route
+      render={() =>
+        isAuth ? (
+          <section className="blog__edit container">
+            {error ? (
+              <div className="alert alert--err mb-md">{error}</div>
+            ) : null}
 
-      {loading && loadingType === "load" ? (
-        <Loading styles={{ width: "3rem", alignSelf: "center" }} />
-      ) : (
-        <form
-          onSubmit={e => {
-            e.persist();
-            updatePost(e);
-          }}
-          className="form"
-        >
-          <BlogInput
-            label="title"
-            title="Title*"
-            value={title}
-            onChange={onChange}
-            name="title"
-          />
-
-          <BlogTextArea
-            label="body"
-            title="Post body*"
-            value={body}
-            name="body"
-            onChange={onChange}
-            cols="30"
-            rows="10"
-          />
-
-          <div className="form__actions">
-            {loading && loadingType === "update" ? (
-              <Loading
-                styles={{
-                  width: "2rem"
-                }}
-              />
+            {loading && loadingType === "load" ? (
+              <Loading styles={{ width: "3rem", alignSelf: "center" }} />
             ) : (
-              <React.Fragment>
-                <button
-                  onClick={() => history.push(`/blog/${match.params.id}`)}
-                  style={{ borderRadius: "5px", marginRight: "1rem" }}
-                  className="btn btn--white"
-                >
-                  Cancel
-                </button>
+              <form
+                onSubmit={e => {
+                  e.persist();
+                  updatePost(e);
+                }}
+                className="form"
+              >
+                <h2 style={{ marginBottom: "1rem" }}>Edit post</h2>
 
-                <button type="submit" className="btn btn--blue">
-                  Update
-                </button>
-              </React.Fragment>
+                <BlogInput
+                  label="title"
+                  title="Title*"
+                  value={title}
+                  onChange={onChange}
+                  name="title"
+                />
+
+                <BlogTextArea
+                  label="body"
+                  title="Post body*"
+                  value={body}
+                  name="body"
+                  onChange={onChange}
+                  cols="30"
+                  rows="10"
+                />
+
+                <div className="form__actions">
+                  {loading && loadingType === "update" ? (
+                    <Loading
+                      styles={{
+                        width: "2rem"
+                      }}
+                    />
+                  ) : (
+                    <React.Fragment>
+                      <div
+                        onClick={() => history.push(`/blog/${match.params.id}`)}
+                        style={{ borderRadius: "5px", marginRight: "1rem" }}
+                        className="btn btn--white"
+                      >
+                        Cancel
+                      </div>
+
+                      <button
+                        style={{ fontSize: "1rem" }}
+                        type="submit"
+                        className="btn btn--blue"
+                      >
+                        Update
+                      </button>
+                    </React.Fragment>
+                  )}
+                </div>
+              </form>
             )}
-          </div>
-        </form>
-      )}
-    </section>
+          </section>
+        ) : (
+          <Redirect to="/" />
+        )
+      }
+    />
   );
 };
 

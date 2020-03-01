@@ -84,6 +84,8 @@ body {
     color: #3f3f3f;
     background-color: #fff;
     border-radius: 10rem; }
+  .btn--red {
+    background-color: #c01e1e; }
   .btn:active {
     transform: scale(0.9); }
 
@@ -1328,6 +1330,45 @@ body {
       margin-top: 1rem;
       text-decoration: none;
       color: #252122; }
+  .dashboard__view-posts {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    .dashboard__view-posts-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-gap: 1rem; }
+    .dashboard__view-posts__posts {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      border-radius: 4px;
+      box-shadow: 2px 2px 10px -1px #000000; }
+    .dashboard__view-posts__header {
+      font-size: 1.5rem; }
+    .dashboard__view-posts__date {
+      margin-bottom: 1rem; }
+      .dashboard__view-posts__date p {
+        font-size: 0.8rem;
+        font-style: italic; }
+    .dashboard__view-posts__body {
+      white-space: pre-wrap;
+      margin-bottom: 1rem; }
+    .dashboard__view-posts__actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: flex-end;
+      border-top: 1px solid #252122;
+      padding-top: 1rem; }
+      .dashboard__view-posts__actions button,
+      .dashboard__view-posts__actions a {
+        border-radius: 4px;
+        font-size: 1rem; }
+        .dashboard__view-posts__actions button:not(:last-child),
+        .dashboard__view-posts__actions a:not(:last-child) {
+          margin-right: 1rem; }
 
 .view-blog {
   position: relative;
