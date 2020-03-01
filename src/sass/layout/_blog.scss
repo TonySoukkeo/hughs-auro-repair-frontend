@@ -93,4 +93,28 @@
       }
     }
   }
+
+  &__edit {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  // Inputs styling
+  &__label {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  &__input,
+  &__text-area {
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    border: 1px solid $color-dark-primary;
+  }
 }

@@ -64,6 +64,8 @@
   border-radius: 5px;
   transition: all 0.1s ease-in;
   box-shadow: $box-shadow;
+  outline: none;
+  border: none;
 
   &--disabled {
     cursor: default;
@@ -160,5 +162,22 @@
   &--err {
     background-color: #fff;
     border: 2px solid $color-red;
+  }
+}
+
+// Form styling
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include respond(large) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
   }
 }

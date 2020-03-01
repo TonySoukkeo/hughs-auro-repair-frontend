@@ -15,6 +15,7 @@ import Admin from "./layout/Admin";
 import Dashboard from "./layout/dashboard/Dashboard";
 import AddPost from "./layout/dashboard/AddPost";
 import ViewBlog from "./layout/blog/ViewBlog";
+import EditPost from "./layout/blog/EditPost";
 
 // Context
 import { DispatchContext } from "./context/StateProvider";
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/blog/:id" component={ViewBlog} />
+          <Route exact path="/blog/edit/:id" component={EditPost} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/dashboard/add-post" component={AddPost} />

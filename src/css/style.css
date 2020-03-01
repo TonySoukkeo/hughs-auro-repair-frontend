@@ -63,7 +63,9 @@ body {
   padding: 0.3rem 0.8rem;
   border-radius: 5px;
   transition: all 0.1s ease-in;
-  box-shadow: 2px 2px 10px -1px #000000; }
+  box-shadow: 2px 2px 10px -1px #000000;
+  outline: none;
+  border: none; }
   .btn--disabled {
     cursor: default;
     color: #252122;
@@ -134,6 +136,18 @@ body {
   .alert--err {
     background-color: #fff;
     border: 2px solid #c01e1e; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+  @media only screen and (min-width: 78.13em) {
+    .form {
+      width: 80%;
+      margin: 0 auto; } }
+  .form__actions {
+    display: flex;
+    justify-content: flex-end; }
 
 .navigation-mobile {
   position: sticky;
@@ -1179,6 +1193,22 @@ body {
     margin-top: 1rem; }
     .blog__buttons-container button:not(:last-child) {
       margin-right: 1rem; }
+  .blog__edit {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+  .blog__label {
+    display: block;
+    margin-bottom: 0.3rem; }
+  .blog__input, .blog__text-area {
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    border: 1px solid #252122; }
 
 .admin {
   padding-top: 2rem;
@@ -1272,31 +1302,11 @@ body {
     .dashboard__add-post__header {
       text-align: center;
       margin-bottom: 1rem; }
-    .dashboard__add-post form {
-      display: flex;
-      flex-direction: column;
-      width: 100%; }
-      @media only screen and (min-width: 78.13em) {
-        .dashboard__add-post form {
-          width: 80%;
-          margin: 0 auto; } }
-      .dashboard__add-post form label {
-        display: block;
-        margin-bottom: 0.3rem; }
-      .dashboard__add-post form textarea,
-      .dashboard__add-post form input {
-        width: 100%;
-        resize: none;
-        outline: none;
-        padding: 0.5rem;
-        border-radius: 3px;
-        font-size: 1rem;
-        border: 1px solid #252122; }
-      .dashboard__add-post form button {
-        outline: none;
-        font-size: 1rem;
-        border: none;
-        align-self: flex-end; }
+    .dashboard__add-post form button {
+      outline: none;
+      font-size: 1rem;
+      border: none;
+      align-self: flex-end; }
   .dashboard__success {
     display: flex;
     flex-direction: column;
@@ -1312,24 +1322,31 @@ body {
     .dashboard__success p {
       cursor: pointer;
       margin-bottom: 1rem; }
-  .dashboard__share-btn p {
-    margin-top: 1rem;
-    text-decoration: none;
-    color: #252122; }
+  .dashboard__share {
+    border: none; }
+    .dashboard__share-btn p {
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #252122; }
 
 .view-blog {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
   padding-bottom: 2rem; }
   .view-blog h1 {
     font-size: 2rem; }
-  .view-blog span,
-  .view-blog h3 {
-    font-style: italic; }
   .view-blog h3 {
     font-weight: normal;
     font-size: 1rem; }
+  .view-blog__edited {
+    display: flex;
+    font-style: italic;
+    font-size: 0.8rem; }
+    .view-blog__edited p {
+      font-style: normal;
+      margin-right: 0.6rem; }
   .view-blog__content {
     border-top: 1px solid #252122;
     margin-top: 2rem;
@@ -1345,3 +1362,40 @@ body {
         font-weight: bold;
         margin-right: 0.8rem;
         font-size: 0.8rem; }
+  .view-blog__admin {
+    margin-top: 1rem; }
+    .view-blog__admin a {
+      text-decoration: none;
+      color: #252122;
+      margin-right: 1rem; }
+    .view-blog__admin button {
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      color: #c01e1e; }
+  .view-blog__alert {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    background-color: #fff;
+    min-width: 25rem;
+    z-index: 95;
+    padding: 1rem;
+    text-align: center; }
+    .view-blog__alert h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem; }
+    .view-blog__alert button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0.4rem 1rem;
+      font-size: 1rem;
+      border-radius: 3px; }
+    .view-blog__alert button:nth-of-type(1) {
+      border: 1px solid #c01e1e;
+      margin-right: 1rem; }
+    .view-blog__alert button:nth-of-type(2) {
+      border: 1px solid #4380c2; }

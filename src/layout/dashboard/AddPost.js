@@ -11,6 +11,8 @@ import useLoading from "../../hooks/useLoading";
 
 // Components
 import Loading from "../../components/loading/Loading";
+import BlogInput from "../../components/form/BlogInput";
+import BlogTextArea from "../../components/form/BlogTextArea";
 
 const AddPost = () => {
   const [input, setInput] = useState({
@@ -107,29 +109,23 @@ const AddPost = () => {
                   addPost(e);
                 }}
               >
-                <div className="form__group">
-                  <label htmlFor="title">Title*</label>
-                  <input
-                    id="title"
-                    value={title}
-                    onChange={onChange}
-                    type="text"
-                    name="title"
-                    autoComplete="off"
-                  />
-                </div>
+                <BlogInput
+                  label="title"
+                  title="Title*"
+                  value={title}
+                  onChange={onChange}
+                  name="title"
+                />
 
-                <div className="form__group">
-                  <label htmlFor="body">Post body*</label>
-                  <textarea
-                    value={body}
-                    onChange={onChange}
-                    name="body"
-                    id="body"
-                    cols="30"
-                    rows="10"
-                  ></textarea>
-                </div>
+                <BlogTextArea
+                  label="body"
+                  title="Post body*"
+                  value={body}
+                  name="body"
+                  onChange={onChange}
+                  cols="30"
+                  rows="10"
+                />
 
                 {!loading ? (
                   <button
