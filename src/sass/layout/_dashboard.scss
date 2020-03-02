@@ -143,6 +143,7 @@
   }
 
   &__view-posts {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
@@ -190,11 +191,45 @@
 
       button,
       a {
+        cursor: pointer;
         border-radius: 4px;
         font-size: 1rem;
 
         &:not(:last-child) {
           margin-right: 1rem;
+        }
+      }
+    }
+
+    &__alert {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25rem;
+      background-color: white;
+      z-index: 95;
+      padding: 1rem;
+      border-radius: 4px;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      &-actions {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+
+        button {
+          cursor: pointer;
+          border-radius: 4px;
+          font-size: 1rem;
+
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
         }
       }
     }
