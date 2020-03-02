@@ -83,7 +83,8 @@ body {
   .btn--white {
     color: #3f3f3f;
     background-color: #fff;
-    border-radius: 10rem; }
+    border-radius: 10rem;
+    border: 1px solid #252122; }
   .btn--red {
     background-color: #c01e1e; }
   .btn:active {
@@ -1075,15 +1076,18 @@ body {
     color: #3b5998; }
 
 .gallery {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem; }
-  @media only screen and (min-width: 60em) {
-    .gallery {
-      grid-template-columns: repeat(4, 1fr); } }
+  .gallery__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem; }
+    @media only screen and (min-width: 60em) {
+      .gallery__grid {
+        grid-template-columns: repeat(4, 1fr); } }
+  .gallery h1 {
+    font-size: 1.2rem; }
   .gallery__image-container {
     cursor: pointer;
     width: 100%;
@@ -1394,6 +1398,32 @@ body {
           font-size: 1rem; }
           .dashboard__view-posts__alert-actions button:not(:last-child) {
             margin-right: 1rem; }
+  .dashboard__manage-gallery {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    .dashboard__manage-gallery__upload {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1rem;
+      width: 40%; }
+      .dashboard__manage-gallery__upload input {
+        visibility: hidden; }
+      .dashboard__manage-gallery__upload label {
+        cursor: pointer;
+        margin: 0 auto; }
+        .dashboard__manage-gallery__upload label i {
+          font-size: 4rem; }
+      .dashboard__manage-gallery__upload h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem; }
+    .dashboard__manage-gallery__images {
+      text-align: left; }
 
 .view-blog {
   position: relative;

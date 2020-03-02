@@ -27,16 +27,10 @@ const Manage = ({ type }) => {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <span>
-              <i className="fas fa-file-upload"></i>
-              <p>Upload image</p>
-              <span>* 1 image per upload</span>
-            </span>
-
-            <span>
+            <Link to="/dashboard/manage-gallery" style={{ margin: "0 auto" }}>
               <i className="far fa-edit"></i>
-              <p>View / Edit Images</p>
-            </span>
+              <p>Manage Images</p>
+            </Link>
           </React.Fragment>
         )}
       </div>

@@ -1,15 +1,21 @@
 .gallery {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  @include respond(medium) {
-    grid-template-columns: repeat(4, 1fr);
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+
+    @include respond(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
+  h1 {
+    font-size: 1.2rem;
+  }
   &__image-container {
     cursor: pointer;
     width: 100%;
