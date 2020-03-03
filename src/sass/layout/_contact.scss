@@ -5,11 +5,14 @@
     }
   }
 
-  &__form {
+  &__form,
+  &__success {
     width: 100%;
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
 
+  &__form {
     @include respond(medium) {
       width: 50%;
     }
@@ -98,6 +101,21 @@
     a {
       font-size: 5rem;
       color: $color-blue-dark-2;
+    }
+  }
+
+  &__success {
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    span {
+      font-size: 6rem;
+      color: $color-green;
+    }
+
+    p {
+      font-size: 1.4rem;
     }
   }
 }

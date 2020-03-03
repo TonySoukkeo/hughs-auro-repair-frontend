@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+// Components
+import Loading from "../components/loading/Loading";
+
+// Custom hooks
+import useError from "../hooks/useError";
+import useLoading from "../hooks/useLoading";
+
 const Contact = () => {
   const [input, setInput] = useState({
     name: "",
@@ -8,56 +15,141 @@ const Contact = () => {
     message: ""
   });
 
+  const [messageSent, setMessageSent] = useState(false);
+
+  const [loading, setLoading] = useLoading();
+  const [error, setError] = useError();
+
   const { name, email, message } = input;
 
   const onChange = e => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log({ name, value });
+
+    setInput(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const postMessage = async e => {
+    try {
+      e.preventDefault();
+
+      setLoading(true);
+      setMessageSent(false);
+
+      // Check if any fields are empty
+      if (!name || !message || !email) {
+        const error = new Error();
+        error.message = "All fields must be filled out";
+
+        throw error;
+      }
+
+      const messageSent = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/form/question`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message
+          })
+        }
+      );
+
+      const messageSentData = await messageSent.json();
+
+      // Check for any errors
+      if (messageSentData.status !== 200) {
+        const error = new Error();
+        error.message = messageSentData.message;
+
+        throw error;
+      }
+
+      setLoading(false);
+      setMessageSent(true);
+      setError("");
+    } catch (err) {
+      setLoading(false);
+      setError(err.message);
+    }
   };
 
   return (
     <section className="contact">
       <div className="contact__form-container">
-        <form className="contact__form container">
-          <h2>Any questions or comments?</h2>
-          <p>Feel free to drop us a line, down below</p>
+        {!messageSent ? (
+          <form
+            onSubmit={e => {
+              e.persist();
 
-          <div className="form__group mb-md">
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              name="name"
-              onChange={onChange}
-              className="form__input-noborder"
-            />
+              postMessage(e);
+            }}
+            className="contact__form container"
+          >
+            <h2>Any questions or comments?</h2>
+            <p>Feel free to drop us a line, down below</p>
+
+            {error ? (
+              <div className="alert alert--err mb-md">{error}</div>
+            ) : null}
+
+            <div className="form__group mb-md">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                name="name"
+                onChange={onChange}
+                className="form__input-noborder"
+              />
+            </div>
+
+            <div className="form__group mb-md">
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                name="email"
+                onChange={onChange}
+                className="form__input-noborder"
+              />
+            </div>
+
+            <div className="form__group-textarea">
+              <textarea
+                className="form__input-textarea"
+                placeholder="Message"
+                name="message"
+                cols="30"
+                onChange={onChange}
+                value={message}
+              ></textarea>
+            </div>
+
+            {loading ? (
+              <Loading styles={{ width: "3rem" }} />
+            ) : (
+              <button className="btn btn--blue" type="submit">
+                Submit
+              </button>
+            )}
+          </form>
+        ) : (
+          <div className="contact__success container">
+            <span>
+              <i className="far fa-paper-plane"></i>
+            </span>
+
+            <p>Message Sent! We will get back to you as soon as we can!</p>
           </div>
-
-          <div className="form__group mb-md">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              name="email"
-              onChange={onChange}
-              className="form__input-noborder"
-            />
-          </div>
-
-          <div className="form__group-textarea">
-            <textarea
-              className="form__input-textarea"
-              placeholder="Message"
-              name="Message"
-              cols="30"
-            ></textarea>
-          </div>
-
-          <button className="btn btn--blue" type="submit">
-            Submit
-          </button>
-        </form>
+        )}
 
         <div className="contact__form-question">
           <span>?</span>
