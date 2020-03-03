@@ -1,24 +1,32 @@
 .gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  height: 100%;
 
   &__grid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 40vw;
     grid-gap: 1rem;
+    height: 100%;
 
     @include respond(medium) {
       grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 20vw;
     }
   }
 
   h1 {
     font-size: 1.2rem;
   }
+
   &__image-container {
+    position: relative;
     cursor: pointer;
-    width: 100%;
     height: 100%;
     transition: all 0.2s ease-in-out;
 
@@ -34,30 +42,33 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+      object-position: center;
     }
   }
 
   &__modal {
-    position: absolute;
+    position: fixed;
     padding: 0.6rem;
     background-color: #fff;
     border-radius: 3px;
     width: 90%;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
+    top: 1rem;
     z-index: 95;
     transition: all 0.3s ease-in;
 
     @include respond(medium) {
-      height: 40rem;
+      overflow: hidden;
+      width: 45%;
+      max-height: 37rem;
     }
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       object-position: center;
+      object-fit: cover;
     }
 
     span {

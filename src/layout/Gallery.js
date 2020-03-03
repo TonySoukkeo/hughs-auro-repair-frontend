@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 
 // Components
 import Overlay from "../components/overlay/Overlay";
@@ -16,13 +16,14 @@ const Gallery = () => {
   const [loadMore, setLoadMore] = useState(false);
   const [page, setPage] = useState(1);
 
-  const [loading, setLoading] = useLoading();
+  const [loading, setLoading, loadingType, setLoadingType] = useLoading();
   const [error, setError] = useError();
 
   useEffect(() => {
     const fetchGallery = async () => {
       try {
         setLoading(true);
+        setLoadingType("main");
 
         const images = await fetch(
           `${
@@ -45,7 +46,9 @@ const Gallery = () => {
         setImages(imagesData.gallery);
         setLoadMore(imagesData.loadMore);
         setLoading(false);
+        setLoadingType("");
       } catch (err) {
+        setLoadingType("");
         setLoading(false);
         setError(err.message);
       }
@@ -62,6 +65,57 @@ const Gallery = () => {
     setSelectImage("");
   };
 
+  // Observer and ref for infinite loading
+  const observer = useRef();
+
+  const lastImageElement = useCallback(
+    node => {
+      if (loading) return;
+
+      if (observer.current) observer.current.disconnect();
+
+      observer.current = new IntersectionObserver(entries => {
+        if (entries[0] && entries[0].isIntersecting && loadMore) {
+          const loadMoreImages = async () => {
+            try {
+              setPage(prevPage => prevPage + 1);
+              setLoading(true);
+              setLoadingType("load more");
+
+              const images = await fetch(
+                `${process.env.REACT_APP_BASE_URL}/gallery/images?page=${page +
+                  1}&limit=${12}`
+              );
+
+              const imagesData = await images.json();
+
+              // Check for any errors
+              if (imagesData.status !== 200) {
+                const error = new Error();
+                error.message = imagesData.message;
+
+                throw error;
+              }
+
+              setImages(prevState => [...prevState, ...imagesData.gallery]);
+              setLoadMore(imagesData.loadMore);
+              setLoading(false);
+              setLoadingType("");
+            } catch (err) {
+              setLoading(false);
+              setLoadingType("");
+              setError(err.message);
+            }
+          };
+          loadMoreImages();
+        }
+      });
+
+      if (node) observer.current.observe(node);
+    },
+    [loadMore, loading]
+  );
+
   return (
     <React.Fragment>
       {selectImage ? <Overlay classname="overlay--dark" /> : null}
@@ -73,15 +127,51 @@ const Gallery = () => {
           <GalleryModal image={selectImage} closeModal={closeImage} />
         ) : null}
 
-        {images.length > 0 ? (
-          <div className="gallery__grid">
-            {images.map(image => (
-              <Image key={image._id} image={image} viewImage={viewImage} />
-            ))}
-          </div>
+        {loading && loadingType === "main" ? (
+          <Loading
+            styles={{
+              width: "4rem",
+              alignSelf: "center"
+            }}
+          />
         ) : (
-          <h1>No images currently</h1>
+          <React.Fragment>
+            {selectImage ? (
+              <GalleryModal image={selectImage} closeModal={closeImage} />
+            ) : null}
+
+            {images.length > 0 ? (
+              <div className="gallery__grid">
+                {images.map((image, index) => {
+                  if (index + 1 === images.length) {
+                    return (
+                      <Image
+                        ref={lastImageElement}
+                        key={image._id}
+                        image={image}
+                        viewImage={viewImage}
+                      />
+                    );
+                  } else
+                    return (
+                      <Image
+                        key={image._id}
+                        image={image}
+                        viewImage={viewImage}
+                      />
+                    );
+                })}
+              </div>
+            ) : (
+              <h1>No images currently</h1>
+            )}
+          </React.Fragment>
         )}
+        {loading && loadingType === "load more" ? (
+          <Loading
+            styles={{ width: "3rem", marginTop: "2rem", alignSelf: "center" }}
+          />
+        ) : null}
       </section>
     </React.Fragment>
   );

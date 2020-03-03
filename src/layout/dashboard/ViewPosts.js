@@ -226,18 +226,33 @@ const ViewPosts = () => {
                 />
               ) : (
                 <div className="dashboard__view-posts-grid">
-                  {posts.map(post => (
-                    <PostCards
-                      ref={lastPostElement}
-                      key={post._id}
-                      title={post.title}
-                      postedDate={post.postedDate}
-                      body={post.body}
-                      edited={post.edited && post.edited.date}
-                      id={post._id}
-                      showDeleteAlert={showDeleteAlert}
-                    />
-                  ))}
+                  {posts.map((post, index) => {
+                    if (index + 1 === posts.length) {
+                      return (
+                        <PostCards
+                          ref={lastPostElement}
+                          key={post._id}
+                          title={post.title}
+                          postedDate={post.postedDate}
+                          body={post.body}
+                          edited={post.edited && post.edited.date}
+                          id={post._id}
+                          showDeleteAlert={showDeleteAlert}
+                        />
+                      );
+                    } else
+                      return (
+                        <PostCards
+                          key={post._id}
+                          title={post.title}
+                          postedDate={post.postedDate}
+                          body={post.body}
+                          edited={post.edited && post.edited.date}
+                          id={post._id}
+                          showDeleteAlert={showDeleteAlert}
+                        />
+                      );
+                  })}
                   {loading && loadingType === "load more" ? (
                     <Loading styles={{ width: "4rem", margin: "0 auto" }} />
                   ) : null}
