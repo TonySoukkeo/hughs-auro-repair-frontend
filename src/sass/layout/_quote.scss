@@ -1,0 +1,23 @@
+.quote {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  button {
+    align-self: flex-start;
+    font-size: 1rem;
+  }
+
+  &__success {
+    text-align: center;
+
+    span {
+      font-size: 6rem;
+      color: $color-green;
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

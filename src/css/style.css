@@ -50,6 +50,9 @@ body {
 .mt-md {
   margin-top: 2rem !important; }
 
+.mb-sm {
+  margin-bottom: 1rem !important; }
+
 .mb-md {
   margin-bottom: 2rem !important; }
 
@@ -425,6 +428,10 @@ body {
 
 .form__group {
   margin-bottom: 1rem; }
+
+.form__label {
+  display: block;
+  margin-bottom: 0.7rem; }
 
 .form__group-textarea {
   position: relative;
@@ -1583,3 +1590,18 @@ body {
       margin-right: 1rem; }
     .view-blog__alert button:nth-of-type(2) {
       border: 1px solid #4380c2; }
+
+.quote {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  .quote button {
+    align-self: flex-start;
+    font-size: 1rem; }
+  .quote__success {
+    text-align: center; }
+    .quote__success span {
+      font-size: 6rem;
+      color: #5de043; }
+    .quote__success p {
+      font-size: 1.4rem;
+      margin-bottom: 1rem; }

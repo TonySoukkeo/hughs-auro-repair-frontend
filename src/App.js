@@ -18,6 +18,7 @@ import ViewBlog from "./layout/blog/ViewBlog";
 import EditPost from "./layout/blog/EditPost";
 import ViewPosts from "./layout/dashboard/ViewPosts";
 import ManageGallery from "./layout/dashboard/ManageGallery";
+import Quote from "./layout/Quote";
 
 // Context
 import { DispatchContext } from "./context/StateProvider";
@@ -68,6 +69,7 @@ function App() {
             path="/dashboard/manage-gallery"
             component={ManageGallery}
           />
+          <Route exact path="/quote" component={Quote} />
         </Switch>
         <Footer />
       </div>

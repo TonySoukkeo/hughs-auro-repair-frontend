@@ -4,10 +4,15 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   const [input, setInput] = useState({ name: "", email: "" });
 
+  const { name, email } = input;
+
   const onChange = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+
     setInput(prevState => ({
       ...prevState,
-      email: e.target.value
+      [name]: value
     }));
   };
 
@@ -57,7 +62,7 @@ const Banner = () => {
             type="text"
             placeholder="Name"
             name="name"
-            value={input.name}
+            value={name}
             onChange={onChange}
           />
         </div>
@@ -68,12 +73,15 @@ const Banner = () => {
             type="email"
             placeholder="Email"
             name="email"
-            value={input.email}
+            value={email}
             onChange={onChange}
           />
         </div>
 
-        <Link className="btn btn--blue" to="/quote">
+        <Link
+          className="btn btn--blue"
+          to={{ pathname: "/quote", state: { name, email } }}
+        >
           Get Started
         </Link>
       </div>

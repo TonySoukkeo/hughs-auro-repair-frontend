@@ -3,6 +3,11 @@
     margin-bottom: 1rem;
   }
 
+  &__label {
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
   &__group-textarea {
     position: relative;
     height: 10rem;
