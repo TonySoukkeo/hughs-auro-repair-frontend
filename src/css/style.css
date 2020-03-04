@@ -259,6 +259,8 @@ body {
     .navigation-mobile__item--sub {
       padding: 0;
       margin-bottom: 0; }
+    .navigation-mobile__item--active {
+      color: #ffd58c; }
   .navigation-mobile__sub {
     font-size: 0;
     height: 0;

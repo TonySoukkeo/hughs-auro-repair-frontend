@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Components
@@ -8,11 +8,24 @@ import Logo from "../../images/logo.png";
 // Context
 import { StateContext } from "../../context/StateProvider";
 
+// Custom hooks
+import useNavigation from "../../hooks/useNavigation";
+
 const NavigationMobile = () => {
   const [checked, setChecked] = useState(false);
   const [aboutSub, setAboutSub] = useState(false);
 
   const { isAuth } = useContext(StateContext);
+
+  const {
+    home,
+    services,
+    about,
+    blog,
+    contact,
+    admin,
+    setNav
+  } = useNavigation();
 
   const toggleCheck = () => {
     setChecked(prevState => !prevState);
@@ -59,14 +72,32 @@ const NavigationMobile = () => {
         <span onClick={toggleCheck}>
           <i className="fas fa-times"></i>
         </span>
-        <Link to="/" onClick={toggleCheck} className="navigation-mobile__item">
+        <Link
+          to="/"
+          onClick={() => {
+            toggleCheck();
+            setNav("home");
+          }}
+          className={
+            home
+              ? "navigation-mobile__item navigation-mobile__item--active"
+              : "navigation-mobile__item"
+          }
+        >
           Home
         </Link>
 
         <Link
           to="/services"
-          onClick={toggleCheck}
-          className="navigation-mobile__item"
+          onClick={() => {
+            toggleCheck();
+            setNav("services");
+          }}
+          className={
+            services
+              ? "navigation-mobile__item navigation-mobile__item--active"
+              : "navigation-mobile__item"
+          }
         >
           Services
         </Link>
@@ -74,7 +105,11 @@ const NavigationMobile = () => {
         <li
           style={{ cursor: "pointer" }}
           onClick={toggleAboutSub}
-          className="navigation-mobile__item"
+          className={
+            about
+              ? "navigation-mobile__item navigation-mobile__item--active"
+              : "navigation-mobile__item"
+          }
         >
           About
           <div
@@ -94,7 +129,10 @@ const NavigationMobile = () => {
             <Link
               style={aboutSub ? { padding: "1rem 0" } : null}
               to="/about"
-              onClick={toggleCheck}
+              onClick={() => {
+                toggleCheck();
+                setNav("about");
+              }}
               className="navigation-mobile__item navigation-mobile__item--sub"
             >
               Our story
@@ -103,7 +141,10 @@ const NavigationMobile = () => {
             <Link
               style={aboutSub ? { padding: "1rem 0" } : null}
               to="/gallery"
-              onClick={toggleCheck}
+              onClick={() => {
+                toggleCheck();
+                setNav("about");
+              }}
               className="navigation-mobile__item navigation-mobile__item--sub"
             >
               Gallery
@@ -113,16 +154,30 @@ const NavigationMobile = () => {
 
         <Link
           to="/blog"
-          onClick={toggleCheck}
-          className="navigation-mobile__item"
+          onClick={() => {
+            toggleCheck();
+            setNav("blog");
+          }}
+          className={
+            blog
+              ? "navigation-mobile__item navigation-mobile__item--active"
+              : "navigation-mobile__item"
+          }
         >
           Blog
         </Link>
 
         <Link
           to="/contact"
-          onClick={toggleCheck}
-          className="navigation-mobile__item"
+          onClick={() => {
+            toggleCheck();
+            setNav("contact");
+          }}
+          className={
+            contact
+              ? "navigation-mobile__item navigation-mobile__item--active"
+              : "navigation-mobile__item"
+          }
         >
           Contact
         </Link>
@@ -130,8 +185,15 @@ const NavigationMobile = () => {
         {isAuth ? (
           <Link
             to="/dashboard"
-            onClick={toggleCheck}
-            className="navigation-mobile__item"
+            onClick={() => {
+              toggleCheck();
+              setNav("admin");
+            }}
+            className={
+              admin
+                ? "navigation-mobile__item navigation-mobile__item--active"
+                : "navigation-mobile__item"
+            }
           >
             Admin
           </Link>

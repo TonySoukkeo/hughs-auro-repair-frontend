@@ -6,8 +6,21 @@ import Logo from "../../images/logo.png";
 // Context
 import { StateContext } from "../../context/StateProvider";
 
+// Custom hooks
+import useNavigation from "../../hooks/useNavigation";
+
 const NavigationDesktop = () => {
   const [aboutSub, setAboutSub] = useState(false);
+
+  const {
+    home,
+    services,
+    about,
+    blog,
+    contact,
+    admin,
+    setNav
+  } = useNavigation();
 
   const { isAuth } = useContext(StateContext);
 
@@ -44,35 +57,58 @@ const NavigationDesktop = () => {
       {/*** Main nav links ***/}
       <ul className="navigation-desktop__list container">
         <Link
-          onClick={disableSubNav}
+          onClick={() => setNav("home")}
           to="/"
-          className="navigation-desktop__item navigation-desktop__item--active"
+          className={
+            home
+              ? "navigation-desktop__item navigation-desktop__item--active"
+              : "navigation-desktop__item"
+          }
         >
           Home
           <span></span>
         </Link>
 
         <Link
-          onClick={disableSubNav}
+          onClick={() => setNav("services")}
           to="/services"
-          className="navigation-desktop__item"
+          className={
+            services
+              ? "navigation-desktop__item navigation-desktop__item--active"
+              : "navigation-desktop__item"
+          }
         >
           Services
           <span></span>
         </Link>
 
-        <div onClick={toggleAboutSub} className="navigation-desktop__item">
+        <div
+          onClick={toggleAboutSub}
+          className={
+            about
+              ? "navigation-desktop__item navigation-desktop__item--active"
+              : "navigation-desktop__item"
+          }
+        >
           About
           <div className="dropdown-arrow dropdown-arrow--active"></div>
           <span></span>
           {/*** Sub navigation ***/}
           {aboutSub ? (
             <ul className="navigation-desktop__sub-list">
-              <Link to="/about" className="navigation-desktop__sub-item">
+              <Link
+                onClick={() => setNav("about")}
+                to="/about"
+                className="navigation-desktop__sub-item"
+              >
                 Our story
               </Link>
 
-              <Link to="/gallery" className="navigation-desktop__sub-item">
+              <Link
+                onClick={() => setNav("about")}
+                to="/gallery"
+                className="navigation-desktop__sub-item"
+              >
                 Gallery
               </Link>
             </ul>
@@ -80,18 +116,26 @@ const NavigationDesktop = () => {
         </div>
 
         <Link
-          onClick={disableSubNav}
+          onClick={() => setNav("blog")}
           to="/blog"
-          className="navigation-desktop__item"
+          className={
+            blog
+              ? "navigation-desktop__item navigation-desktop__item--active"
+              : "navigation-desktop__item"
+          }
         >
           Blog
           <span></span>
         </Link>
 
         <Link
-          onClick={disableSubNav}
+          onClick={() => setNav("contact")}
           to="/contact"
-          className="navigation-desktop__item"
+          className={
+            contact
+              ? "navigation-desktop__item navigation-desktop__item--active"
+              : "navigation-desktop__item"
+          }
         >
           Contact
           <span></span>
@@ -99,9 +143,13 @@ const NavigationDesktop = () => {
 
         {isAuth ? (
           <Link
-            onClick={disableSubNav}
+            onClick={() => setNav("admin")}
             to="/dashboard"
-            className="navigation-desktop__item"
+            className={
+              admin
+                ? "navigation-desktop__item navigation-desktop__item--active"
+                : "navigation-desktop__item"
+            }
           >
             Admin
             <span></span>
