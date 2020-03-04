@@ -19,6 +19,7 @@ import EditPost from "./layout/blog/EditPost";
 import ViewPosts from "./layout/dashboard/ViewPosts";
 import ManageGallery from "./layout/dashboard/ManageGallery";
 import Quote from "./layout/Quote";
+import NotFound from "./layout/NotFound";
 
 // Context
 import { DispatchContext } from "./context/StateProvider";
@@ -70,6 +71,8 @@ function App() {
             component={ManageGallery}
           />
           <Route exact path="/quote" component={Quote} />
+
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </div>
