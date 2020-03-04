@@ -14,6 +14,7 @@ const useNavigation = () => {
 
   useEffect(() => {
     const pathName = window.location.pathname.split("/")[1];
+
     switch (pathName) {
       case "":
         setCurrentNav({
@@ -87,6 +88,9 @@ const useNavigation = () => {
   }, []);
 
   const setNav = type => {
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+
     switch (type) {
       case "home":
         setCurrentNav({
