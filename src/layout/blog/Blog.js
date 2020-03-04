@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
 
 // Components
 import BlogCards from "../../components/blog/BlogCards";
@@ -57,6 +58,13 @@ const Blog = () => {
 
   return (
     <section className="blog">
+      <Helmet>
+        <title>Hugh's diesel and auto repair | Blog</title>
+        <meta 
+        name='description'
+        content="Hugh's diesel and auto repair, located in Great Falls, Montana. Stay up to date with any news or updates that we have through our blog!"
+        />
+      </Helmet>  
       {/*** Blog Display ***/}
       <div className="blog__grid-container container">
         {!loading ? (

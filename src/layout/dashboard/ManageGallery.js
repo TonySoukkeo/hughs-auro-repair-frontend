@@ -6,6 +6,7 @@ import React, {
   useCallback
 } from "react";
 import { Route, Redirect } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 // Components
 import ManageGalleryImage from "../../components/dashboard/ManageGalleryImage";
@@ -242,6 +243,9 @@ const ManageGallery = () => {
             {imageId ? <Overlay classname="overlay--dark" /> : null}
 
             <section className="dashboard__manage-gallery container">
+              <Helmet>
+                <title>Hugh's diesel and auto repair | Manage Galery</title>
+              </Helmet>  
               {error ? <div className="alert alert--err">{error}</div> : null}
 
               {imageId ? (

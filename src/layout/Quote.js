@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 // Components
 import QuoteTextInput from "../components/quote/QuoteTextInput";
@@ -123,6 +124,11 @@ const Quote = ({ location }) => {
 
   return (
     <section className="quote container">
+      <Helmet>
+        <title>Need your vehicle fixed? Request a free quote here today</title>
+        <meta name="description" content="Diesel and auto repair service in Great Falls, Montana. Top quality auto repair service that you can depend on, request a free quote today for you vehicle repair!"/>
+      </Helmet>
+
       {error ? <div className="alert alert--err mb-sm">{error}</div> : null}
       {!quoteSent ? (
         <form

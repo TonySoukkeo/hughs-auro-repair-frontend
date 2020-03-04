@@ -57,7 +57,10 @@ const NavigationDesktop = () => {
       {/*** Main nav links ***/}
       <ul className="navigation-desktop__list container">
         <Link
-          onClick={() => setNav("home")}
+          onClick={() => {
+            setNav("home");
+            setAboutSub(false);
+          }}
           to="/"
           className={
             home
@@ -70,7 +73,10 @@ const NavigationDesktop = () => {
         </Link>
 
         <Link
-          onClick={() => setNav("services")}
+          onClick={() => {
+            setNav("services");
+            setAboutSub(false);
+          }}
           to="/services"
           className={
             services
@@ -97,7 +103,10 @@ const NavigationDesktop = () => {
           {aboutSub ? (
             <ul className="navigation-desktop__sub-list">
               <Link
-                onClick={() => setNav("about")}
+                onClick={() => {
+                  setNav("about");
+                  setAboutSub(false);
+                }}
                 to="/about"
                 className="navigation-desktop__sub-item"
               >
@@ -105,7 +114,10 @@ const NavigationDesktop = () => {
               </Link>
 
               <Link
-                onClick={() => setNav("about")}
+                onClick={() => {
+                  setNav("about");
+                  setAboutSub(false);
+                }}
                 to="/gallery"
                 className="navigation-desktop__sub-item"
               >
@@ -116,7 +128,10 @@ const NavigationDesktop = () => {
         </div>
 
         <Link
-          onClick={() => setNav("blog")}
+          onClick={() => {
+            setNav("blog");
+            setAboutSub(false);
+          }}
           to="/blog"
           className={
             blog
@@ -129,7 +144,10 @@ const NavigationDesktop = () => {
         </Link>
 
         <Link
-          onClick={() => setNav("contact")}
+          onClick={() => {
+            setNav("contact");
+            setAboutSub(false);
+          }}
           to="/contact"
           className={
             contact
@@ -143,7 +161,10 @@ const NavigationDesktop = () => {
 
         {isAuth ? (
           <Link
-            onClick={() => setNav("admin")}
+            onClick={() => {
+              setNav("admin");
+              setAboutSub(false);
+            }}
             to="/dashboard"
             className={
               admin

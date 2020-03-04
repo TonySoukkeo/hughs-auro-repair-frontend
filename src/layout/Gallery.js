@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import { Helmet } from 'react-helmet';
 
 // Components
 import Overlay from "../components/overlay/Overlay";
@@ -121,6 +122,13 @@ const Gallery = () => {
       {selectImage ? <Overlay classname="overlay--dark" /> : null}
 
       <section className="gallery container">
+        <Helmet>
+          <title>Hugh's diesel and auto repair | Gallery</title>
+          <meta 
+          title="description"
+          content= "Hugh's diesel and auto repair service, located in Great Falls, Montana. We provide the best quality repair service in town for a great price! Check out some of our work here."
+          />
+        </Helmet>  
         {error ? <div className="alert alert--err">{error}</div> : null}
 
         {selectImage ? (

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { SET_AUTH } from "../../reducers/constants/AuthConstants";
+import { Helmet } from 'react-helmet';
 
 // Components
 import Manage from "../../components/dashboard/Manage";
@@ -44,6 +45,9 @@ const Dashboard = () => {
       render={() =>
         isAuth ? (
           <section className="dashboard">
+            <Helmet>
+              <title>Hugh's diesel and auto repair | Admin Dashboard</title>
+            </Helmet>  
             <DashNav signOut={signOut} firstName={user.firstName} />
 
             <div className="dashboard__content container">

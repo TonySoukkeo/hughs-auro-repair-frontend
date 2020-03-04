@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 // Components
 import Loading from "../components/loading/Loading";
@@ -88,6 +89,13 @@ const Contact = () => {
 
   return (
     <section className="contact">
+      <Helmet>
+        <title>Hugh's diesel and auto repair | Contact us for any questions or request a free auto quote today</title>
+        <meta 
+        name="description"
+        content="Hugh's diesel and auto repair, located in Great Falls, Montana. We deliver the best quality auto repair service you can find! Have any questions or concerns? Drop us a message here. Or if your car needs any repair, request a free quote today!"
+        />
+      </Helmet>
       <div className="contact__form-container">
         {!messageSent ? (
           <form

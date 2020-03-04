@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
 import Loading from "../components/loading/Loading";
+import { Helmet } from "react-helmet";
 
 // Custom hooks
 import useError from "../hooks/useError";
@@ -76,6 +77,9 @@ const Admin = () => {
       render={() =>
         !isAuth ? (
           <section className="admin container">
+            <Helmet>
+              <title>Hugh's diesel and auto repair | Admin</title>
+            </Helmet>
             <h2>
               <span>
                 <i className="fas fa-user-lock"></i>

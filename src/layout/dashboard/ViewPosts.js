@@ -6,6 +6,7 @@ import React, {
   useCallback
 } from "react";
 import { Route, Redirect } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 // Components
 import PostCards from "../../components/dashboard/PostCards";
@@ -177,6 +178,9 @@ const ViewPosts = () => {
             {deleteAlert ? <Overlay classname="overlay--dark" /> : null}
 
             <section className="dashboard__view-posts container">
+              <Helmet>
+                <title>Hugh's diesel and auto repair | Manage blog posts</title>
+               </Helmet> 
               <h2>Manage blog posts</h2>
 
               {deleteAlert ? (

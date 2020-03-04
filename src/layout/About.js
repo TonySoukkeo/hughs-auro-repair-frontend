@@ -1,8 +1,16 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   return (
     <section className="about">
+      <Helmet>
+        <title>Hugh's diesel and auto repair | About us</title>
+        <meta 
+        name ='description'
+        content = "Hugh's diesel and auto repair service, located in Great Falls, Montana. Founded and ran by Hugh Engelby, we put in the care and effort to offer the upmost quality service that you would expect for any of your vehicle needs. Our services includes: Heavy truck and equipment, automotive, onan generators, and trailer repair. Request a free quote today or give us a call at (406)750-8751"
+        />
+      </Helmet>  
       <header className="about__header">
         <h1>
           <span></span> Our mission <span></span>
