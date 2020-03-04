@@ -18,7 +18,11 @@ body {
 
 .App {
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh;
+  padding-bottom: 21rem; }
+  @media only screen and (min-width: 60em) {
+    .App {
+      padding-bottom: 18rem; } }
 
 .container {
   padding-left: 2rem;
@@ -1271,10 +1275,10 @@ body {
       .admin form {
         width: 60%; } }
   .admin button {
-    cursor: pointer;
     border: none;
     outline: none;
-    font-size: 1rem; }
+    font-size: 1rem;
+    align-self: flex-start; }
 
 .dashboard {
   padding-bottom: 2rem; }

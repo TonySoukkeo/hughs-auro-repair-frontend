@@ -1,5 +1,8 @@
 import { SET_AUTH } from "../constants/AuthConstants";
 
+/**********
+ User Login 
+ **********/
 export const postLogin = async (email, password, dispatch) => {
   try {
     // Check for any empty fields

@@ -1,11 +1,11 @@
 import React from "react";
 
-const DashNav = ({ firstName }) => {
+const DashNav = ({ firstName, signOut }) => {
   return (
     <nav className="dashboard__nav container">
       <p>Welcome, {firstName}</p>
 
-      <span>
+      <span onClick={signOut}>
         <i className="fas fa-sign-out-alt"></i> Sign Out
       </span>
     </nav>

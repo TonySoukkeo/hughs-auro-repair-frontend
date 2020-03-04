@@ -48,4 +48,9 @@ body {
 .App {
   position: relative;
   min-height: 100vh;
+
+  padding-bottom: 21rem;
+  @include respond(medium) {
+    padding-bottom: 18rem;
+  }
 }
