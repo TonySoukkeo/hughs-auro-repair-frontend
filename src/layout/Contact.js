@@ -81,6 +81,11 @@ const Contact = () => {
     }
   };
 
+  // Invalid variable to disable submit btn
+  let disabled = true;
+
+  if (name && email && message) disabled = false;
+
   return (
     <section className="contact">
       <div className="contact__form-container">
@@ -136,7 +141,11 @@ const Contact = () => {
             {loading ? (
               <Loading styles={{ width: "3rem" }} />
             ) : (
-              <button className="btn btn--blue" type="submit">
+              <button
+                disabled={disabled}
+                className={disabled ? "btn btn--disabled" : "btn btn--blue"}
+                type="submit"
+              >
                 Submit
               </button>
             )}

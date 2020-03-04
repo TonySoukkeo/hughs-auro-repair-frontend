@@ -116,6 +116,11 @@ const Quote = ({ location }) => {
     }
   };
 
+  // Disabled variable for btn
+  let disabled = true;
+
+  if (name && email && vehicle && description) disabled = false;
+
   return (
     <section className="quote container">
       {error ? <div className="alert alert--err mb-sm">{error}</div> : null}
@@ -159,7 +164,12 @@ const Quote = ({ location }) => {
           {loading ? (
             <Loading styles={{ width: "3rem" }} />
           ) : (
-            <button className="btn btn--blue">Submit</button>
+            <button
+              disabled={disabled}
+              className={disabled ? "btn btn--disabled" : "btn btn--blue"}
+            >
+              Submit
+            </button>
           )}
         </form>
       ) : (
