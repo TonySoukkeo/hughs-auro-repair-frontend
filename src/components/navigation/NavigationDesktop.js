@@ -43,10 +43,10 @@ const NavigationDesktop = () => {
 
       {/*** Social and Tel bar ***/}
       <div className="navigation-desktop__social container">
-        <a href="tel: 111-111-1111">
+        <a href="tel:406-866-0113">
           <i className="fas fa-phone"></i>{" "}
           <span className="navigation-desktop__social--phone">
-            111-111-1111
+            406-866-0113
           </span>
         </a>
         <a href="https://www.facebook.com" target="_blank">

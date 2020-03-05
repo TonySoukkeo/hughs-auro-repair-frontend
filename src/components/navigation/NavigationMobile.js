@@ -229,7 +229,7 @@ const NavigationMobile = () => {
           >
             <i className="fab fa-facebook-square"></i>
           </a>
-          <a href="tel:406-899-8999" className="navigation-mobile__actions">
+          <a href="tel:406-866-0113" className="navigation-mobile__actions">
             <i className="fas fa-phone-square"></i>
           </a>
         </div>
