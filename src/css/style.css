@@ -363,8 +363,9 @@ body {
     opacity: 1;
     bottom: 0.7rem; }
   .navigation-desktop__sub-list {
+    display: block;
     position: absolute;
-    bottom: -6rem;
+    bottom: -8rem;
     background: #352e30;
     padding: 1rem;
     border-radius: 3px;
@@ -372,6 +373,7 @@ body {
   .navigation-desktop__sub-item {
     width: 10rem;
     display: block;
+    height: 100%;
     text-decoration: none;
     color: #fff;
     transition: all 0.1s ease-in; }

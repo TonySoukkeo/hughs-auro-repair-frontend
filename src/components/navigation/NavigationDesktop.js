@@ -103,10 +103,7 @@ const NavigationDesktop = () => {
           {aboutSub ? (
             <ul className="navigation-desktop__sub-list">
               <Link
-                onClick={() => {
-                  setNav("about");
-                  setAboutSub(false);
-                }}
+                onClick={() => setNav("about")}
                 to="/about"
                 className="navigation-desktop__sub-item"
               >
@@ -114,14 +111,19 @@ const NavigationDesktop = () => {
               </Link>
 
               <Link
-                onClick={() => {
-                  setNav("about");
-                  setAboutSub(false);
-                }}
+                onClick={() => setNav("about")}
                 to="/gallery"
                 className="navigation-desktop__sub-item"
               >
                 Gallery
+              </Link>
+
+              <Link
+                onClick={() => setNav("about")}
+                to="/testimonials"
+                className="navigation-desktop__sub-item"
+              >
+                Testimonials
               </Link>
             </ul>
           ) : null}

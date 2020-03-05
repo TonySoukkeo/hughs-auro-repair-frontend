@@ -149,6 +149,18 @@ const NavigationMobile = () => {
             >
               Gallery
             </Link>
+
+            <Link
+              style={aboutSub ? { padding: "1rem 0" } : null}
+              to="/testimonials"
+              onClick={() => {
+                toggleCheck();
+                setNav("about");
+              }}
+              className="navigation-mobile__item navigation-mobile__item--sub"
+            >
+              Testimonials
+            </Link>
           </div>
         </li>
 
