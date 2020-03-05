@@ -93,7 +93,7 @@ const Contact = () => {
         <title>Hugh's diesel and auto repair | Contact us for any questions or request a free auto quote today</title>
         <meta 
         name="description"
-        content="Hugh's diesel and auto repair, located in Great Falls, Montana. We deliver the best quality auto repair service you can find! Have any questions or concerns? Drop us a message here. Or if your car needs any repair, request a free quote today!"
+        content="Hugh's diesel and auto repair, located in Great Falls, Montana. We deliver the best quality auto repair service you can find! Have any questions or concerns? Drop us a message here. Or if your car needs any repair, request a free quote today! Or give us a call at (406)866-0113. We are open Mon - Fri, from 8am to 5pm"
         />
       </Helmet>
       <div className="contact__form-container">
