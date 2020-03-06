@@ -1,5 +1,4 @@
 import React from "react";
-import Img from "../../images/intro.jpg";
 
 const Intro = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 // Components
 import Overlay from "../components/overlay/Overlay";
@@ -56,6 +56,7 @@ const Gallery = () => {
     };
 
     fetchGallery();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const viewImage = img => {
@@ -114,6 +115,7 @@ const Gallery = () => {
 
       if (node) observer.current.observe(node);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [loadMore, loading]
   );
 
@@ -124,11 +126,11 @@ const Gallery = () => {
       <section className="gallery container">
         <Helmet>
           <title>Hugh's diesel and auto repair | Gallery</title>
-          <meta 
-          title="description"
-          content= "Hugh's diesel and auto repair service, located in Great Falls, Montana. We provide the best quality repair service in town for a great price! Check out some of our work here."
+          <meta
+            title="description"
+            content="Hugh's diesel and auto repair service, located in Great Falls, Montana. We provide the best quality repair service in town for a great price! Check out some of our work here."
           />
-        </Helmet>  
+        </Helmet>
         {error ? <div className="alert alert--err">{error}</div> : null}
 
         {selectImage ? (

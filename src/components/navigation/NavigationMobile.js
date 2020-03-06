@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 // Components
@@ -224,6 +224,7 @@ const NavigationMobile = () => {
         <div className="flex flex--space-around mt-sm">
           <a
             href="https://www.facebook.com"
+            rel="noopener noreferrer"
             target="_blank"
             className="navigation-mobile__actions"
           >

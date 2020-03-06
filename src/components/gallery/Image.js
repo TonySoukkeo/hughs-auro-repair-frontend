@@ -9,7 +9,7 @@ const Image = React.forwardRef(({ image, index, viewImage }, ref) => {
     >
       <img
         src={`${process.env.REACT_APP_BASE_URL}${image.url}`}
-        alt={`Gallery image ${index + 1}`}
+        alt={`Gallery ${index + 1}`}
       />
     </div>
   );

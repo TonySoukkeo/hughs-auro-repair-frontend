@@ -28,9 +28,9 @@ const Gallery = () => {
       </div>
 
       <div className="home__gallery-showcase">
-        <img src={Gallery1} alt="Image 1" />
-        <img src={Gallery2} alt="Image 2" />
-        <img src={Gallery3} alt="Image 3" />
+        <img src={Gallery1} alt="Showcase 1" />
+        <img src={Gallery2} alt="Showcase 2" />
+        <img src={Gallery3} alt="Showcase 4" />
       </div>
 
       <Link to="/gallery">See more</Link>

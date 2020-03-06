@@ -49,7 +49,11 @@ const NavigationDesktop = () => {
             406-866-0113
           </span>
         </a>
-        <a href="https://www.facebook.com" target="_blank">
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fab fa-facebook-square"></i>
         </a>
       </div>

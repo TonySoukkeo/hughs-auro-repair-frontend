@@ -6,10 +6,7 @@ const ManageGalleryImage = React.forwardRef(({ image, onClick }, ref) => {
       <span onClick={onClick}>
         <i className="fas fa-trash"></i>
       </span>
-      <img
-        src={`${process.env.REACT_APP_BASE_URL}${image}`}
-        alt="Gallery image"
-      />
+      <img src={`${process.env.REACT_APP_BASE_URL}${image}`} alt="Gallery" />
     </div>
   );
 });

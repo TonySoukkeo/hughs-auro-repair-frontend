@@ -45,7 +45,7 @@ function App() {
       }
     };
     verify();
-  }, []);
+  }, [authDispatch]);
 
   return (
     <Router>

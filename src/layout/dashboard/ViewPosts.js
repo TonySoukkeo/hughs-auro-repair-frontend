@@ -6,7 +6,7 @@ import React, {
   useCallback
 } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 // Components
 import PostCards from "../../components/dashboard/PostCards";
@@ -70,59 +70,64 @@ const ViewPosts = () => {
     };
 
     getPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Observer and ref for infinite loading
   const observer = useRef();
-  const lastPostElement = useCallback(node => {
-    if (loading) return;
-    if (observer.current) observer.current.disconnect();
+  const lastPostElement = useCallback(
+    node => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
 
-    observer.current = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && loadMore) {
-        // Load more from api
+      observer.current = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && loadMore) {
+          // Load more from api
 
-        // Increment page number
-        setPage(prevPage => prevPage + 1);
+          // Increment page number
+          setPage(prevPage => prevPage + 1);
 
-        // Get next set of posts
-        const loadMorePosts = async () => {
-          try {
-            setLoading(true);
-            setLoadingType("load more");
+          // Get next set of posts
+          const loadMorePosts = async () => {
+            try {
+              setLoading(true);
+              setLoadingType("load more");
 
-            const results = await fetch(
-              `${process.env.REACT_APP_BASE_URL}/blog/posts?page=${page +
-                1}&limit=${20}`
-            );
+              const results = await fetch(
+                `${process.env.REACT_APP_BASE_URL}/blog/posts?page=${page +
+                  1}&limit=${20}`
+              );
 
-            const resultsData = await results.json();
+              const resultsData = await results.json();
 
-            // Check for any errors
-            if (resultsData.status !== 200) {
-              const error = new Error();
-              error.message = resultsData.message;
+              // Check for any errors
+              if (resultsData.status !== 200) {
+                const error = new Error();
+                error.message = resultsData.message;
 
-              throw error;
+                throw error;
+              }
+
+              setPosts(prevPosts => [...prevPosts, ...resultsData.blog]);
+              setLoadMore(resultsData.loadMore);
+              setLoading(false);
+              setLoadingType("");
+            } catch (err) {
+              setLoading(false);
+              setLoadingType("");
+              setError(err.message);
             }
+          };
 
-            setPosts(prevPosts => [...prevPosts, ...resultsData.blog]);
-            setLoadMore(resultsData.loadMore);
-            setLoading(false);
-            setLoadingType("");
-          } catch (err) {
-            setLoading(false);
-            setLoadingType("");
-            setError(err.message);
-          }
-        };
+          loadMorePosts();
+        }
+      });
 
-        loadMorePosts();
-      }
-    });
-
-    if (node) observer.current.observe(node);
-  });
+      if (node) observer.current.observe(node);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [loading, loadMore]
+  );
 
   const showDeleteAlert = id => {
     setDeleteAlert(true);
@@ -180,7 +185,7 @@ const ViewPosts = () => {
             <section className="dashboard__view-posts container">
               <Helmet>
                 <title>Hugh's diesel and auto repair | Manage blog posts</title>
-               </Helmet> 
+              </Helmet>
               <h2>Manage blog posts</h2>
 
               {deleteAlert ? (

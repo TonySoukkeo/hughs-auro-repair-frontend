@@ -59,6 +59,8 @@ const ViewBlog = ({ match, history }) => {
     };
 
     getPost();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deletePost = async () => {

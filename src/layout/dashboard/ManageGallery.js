@@ -6,7 +6,7 @@ import React, {
   useCallback
 } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 // Components
 import ManageGalleryImage from "../../components/dashboard/ManageGalleryImage";
@@ -68,6 +68,7 @@ const ManageGallery = () => {
     };
 
     fetchGallery();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Image select
@@ -232,6 +233,7 @@ const ManageGallery = () => {
       });
       if (node) observer.current.observe(node);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [loading, loadMore]
   );
 
@@ -245,7 +247,7 @@ const ManageGallery = () => {
             <section className="dashboard__manage-gallery container">
               <Helmet>
                 <title>Hugh's diesel and auto repair | Manage Galery</title>
-              </Helmet>  
+              </Helmet>
               {error ? <div className="alert alert--err">{error}</div> : null}
 
               {imageId ? (

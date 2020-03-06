@@ -52,59 +52,69 @@ const Reviews = () => {
 
     // Cleanup
     return () => setReviews([]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Set up pages for infinite load
   const observer = useRef();
 
-  const lastElement = useCallback(node => {
-    if (loading) return;
+  const lastElement = useCallback(
+    node => {
+      if (loading) return;
 
-    if (observer.current) observer.current.disconnect();
+      if (observer.current) observer.current.disconnect();
 
-    observer.current = new IntersectionObserver(entries => {
-      if (entries[0] && entries[0].isIntersecting && loadMore) {
-        const loadMoreReviews = async () => {
-          try {
-            setPage(prevPage => prevPage + 1);
+      observer.current = new IntersectionObserver(entries => {
+        if (entries[0] && entries[0].isIntersecting && loadMore) {
+          const loadMoreReviews = async () => {
+            try {
+              setPage(prevPage => prevPage + 1);
 
-            setLoading(true);
-            setLoadingType("load more");
+              setLoading(true);
+              setLoadingType("load more");
 
-            const reviews = await fetch(
-              `${process.env.REACT_APP_BASE_URL}/reviews?limit=${20}`
-            );
+              const reviews = await fetch(
+                `${
+                  process.env.REACT_APP_BASE_URL
+                }/reviews?limit=${20}&page=${page + 1}`
+              );
 
-            const reviewsData = await reviews.json();
+              const reviewsData = await reviews.json();
 
-            // Check for any errors
-            if (reviewsData.status !== 200) {
-              const error = new Error();
-              error.message = reviewsData.message;
+              // Check for any errors
+              if (reviewsData.status !== 200) {
+                const error = new Error();
+                error.message = reviewsData.message;
 
-              throw error;
+                throw error;
+              }
+
+              setReviews(prevState => ({
+                ...prevState,
+                ...reviewsData.reviews
+              }));
+
+              setLoadMore(reviewsData.loadMore);
+
+              setLoading(false);
+              setLoadingType("");
+            } catch (err) {
+              setLoading(false);
+              setLoadingType("");
+              setError(err.message);
             }
+          };
 
-            setReviews(prevState => ({
-              ...prevState,
-              ...reviewsData.reviews
-            }));
+          loadMoreReviews();
+        }
+      });
 
-            setLoadMore(reviewsData.loadMore);
-
-            setLoading(false);
-            setLoadingType("");
-          } catch (err) {
-            setLoading(false);
-            setLoadingType("");
-            setError(err.message);
-          }
-        };
-
-        loadMoreReviews();
-      }
-    });
-  });
+      if (node) observer.current.observe(node);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [loadMore, loading]
+  );
 
   return (
     <section className="reviews container">

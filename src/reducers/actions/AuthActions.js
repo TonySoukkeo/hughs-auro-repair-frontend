@@ -35,7 +35,7 @@ export const postLogin = async (email, password, dispatch) => {
     const loginData = await login.json();
 
     // Check for any errors
-    if (loginData.status != 200) {
+    if (loginData.status !== 200) {
       const error = new Error();
       error.message = loginData.message;
 

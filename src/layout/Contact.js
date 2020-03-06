@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 // Components
 import Loading from "../components/loading/Loading";
@@ -90,10 +90,13 @@ const Contact = () => {
   return (
     <section className="contact">
       <Helmet>
-        <title>Hugh's diesel and auto repair | Contact us for any questions or request a free auto quote today</title>
-        <meta 
-        name="description"
-        content="Hugh's diesel and auto repair, located in Great Falls, Montana. We deliver the best quality auto repair service you can find! Have any questions or concerns? Drop us a message here. Or if your car needs any repair, request a free quote today! Or give us a call at (406)866-0113. We are open Mon - Fri, from 8am to 5pm"
+        <title>
+          Hugh's diesel and auto repair | Contact us for any questions or
+          request a free auto quote today
+        </title>
+        <meta
+          name="description"
+          content="Hugh's diesel and auto repair, located in Great Falls, Montana. We deliver the best quality auto repair service you can find! Have any questions or concerns? Drop us a message here. Or if your car needs any repair, request a free quote today! Or give us a call at (406)866-0113. We are open Mon - Fri, from 8am to 5pm"
         />
       </Helmet>
       <div className="contact__form-container">
@@ -184,7 +187,11 @@ const Contact = () => {
       <div className="contact__social">
         <h2>Follow us on social media!</h2>
 
-        <a href="https://facebook.com" target="_blank">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="fab fa-facebook-square"></i>
         </a>
       </div>

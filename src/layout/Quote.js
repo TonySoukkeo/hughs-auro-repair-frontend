@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 // Components
 import QuoteTextInput from "../components/quote/QuoteTextInput";
@@ -49,7 +49,7 @@ const Quote = ({ location }) => {
         description: ""
       });
     };
-  }, []);
+  }, [location.state]);
 
   const onChange = e => {
     const name = e.target.name;
@@ -126,7 +126,10 @@ const Quote = ({ location }) => {
     <section className="quote container">
       <Helmet>
         <title>Need your vehicle fixed? Request a free quote here today</title>
-        <meta name="description" content="Diesel and auto repair service in Great Falls, Montana. Top quality auto repair service that you can depend on, request a free quote today for you vehicle repair!"/>
+        <meta
+          name="description"
+          content="Diesel and auto repair service in Great Falls, Montana. Top quality auto repair service that you can depend on, request a free quote today for you vehicle repair!"
+        />
       </Helmet>
 
       {error ? <div className="alert alert--err mb-sm">{error}</div> : null}
