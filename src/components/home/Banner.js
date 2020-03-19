@@ -19,7 +19,7 @@ const Banner = () => {
   return (
     <div className="home__banner container">
       <div className="home__banner-header">
-        <h1>Honest, top quality auto repair</h1>
+        <h1>Great Falls, Montana. Honest, top quality auto repair.</h1>
         <Link to="/services" className="btn btn--blue text-bold">
           Learn More &rarr;
         </Link>
