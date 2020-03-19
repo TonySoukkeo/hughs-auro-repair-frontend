@@ -11,12 +11,10 @@ const Service = () => {
         </div>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-          quos accusamus hic corporis omnis asperiores id nam totam dolor! Quas
-          error quos eveniet. Voluptate quis odit neque itaque illo eius
-          architecto magnam repudiandae illum rem fuga nisi eos aspernatur
-          blanditiis ad quidem quam, non, possimus repellat veniam! Asperiores,
-          reprehenderit optio.
+          We offer several services that accomodate your needs! Repairs aren't
+          just limited to automotive, as they include electrical and mechanical
+          diagnostics, equipment repairs, transimission repairs, onan genrators
+          repairs, and more!
         </p>
       </div>
 
@@ -24,40 +22,38 @@ const Service = () => {
         <div className="home__services-options--showcase">
           <div className="home__services-options--showcase-card">
             <h1>
-              Service 1<span className="underline underline--blue"></span>
+              Trailer Repair<span className="underline underline--blue"></span>
             </h1>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus quod maxime eius est fugit porro, veritatis fuga
-              ipsum? Ullam ea porro reprehenderit facere sed distinctio illo
-              incidunt assumenda quasi aspernatur?
+              DOT regulations need to be followed in order to pull a trailer.
+              Our shop makes sure you are passing all requirements safely and
+              legally. We offer repairs that will keep you safe and without any
+              traffic violations.
             </p>
           </div>
 
           <div className="home__services-options--showcase-card">
             <h1>
-              Service 2<span className="underline underline--blue"></span>
+              Electrical Diagnostics
+              <span className="underline underline--blue"></span>
             </h1>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus quod maxime eius est fugit porro, veritatis fuga
-              ipsum? Ullam ea porro reprehenderit facere sed distinctio illo
-              incidunt assumenda quasi aspernatur?
+              We have the latest diagnostics equipment to properly diagnose and
+              repair all make and models on the road today. (cars, trucks,
+              trailers, equipment, etc.)
             </p>
           </div>
 
           <div className="home__services-options--showcase-card">
             <h1>
-              Service 3<span className="underline underline--blue"></span>
+              Diesel and auto<span className="underline underline--blue"></span>
             </h1>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus quod maxime eius est fugit porro, veritatis fuga
-              ipsum? Ullam ea porro reprehenderit facere sed distinctio illo
-              incidunt assumenda quasi aspernatur?
+              We work on everything that drives or needs to be pushed into our
+              doors.
             </p>
           </div>
         </div>

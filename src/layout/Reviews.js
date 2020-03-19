@@ -36,7 +36,7 @@ const Reviews = () => {
 
           throw error;
         }
-
+        console.log(reviewsData);
         setReviews(reviewsData.reviews);
         setLoadMore(reviewsData.loadMore);
         setLoading(false);

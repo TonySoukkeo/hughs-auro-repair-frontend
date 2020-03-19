@@ -273,7 +273,7 @@ body {
       padding: 0.8rem 0 0 0.5rem;
       border-top: 1px solid #ccc; }
   .navigation-mobile__logo {
-    width: 40%; }
+    height: 40%; }
   .navigation-mobile__actions {
     cursor: pointer;
     text-decoration: none;
@@ -859,15 +859,15 @@ body {
       width: calc(25% - 1rem);
       border-right: 1px solid #fff; } }
 
-.services__1, .services__2, .services__3 {
+.services__1, .services__2, .services__3, .services__4, .services__5, .services__6, .services__7, .services__8, .services__9 {
   position: relative;
   display: flex;
   flex-direction: column; }
   @media only screen and (min-width: 60em) {
-    .services__1, .services__2, .services__3 {
+    .services__1, .services__2, .services__3, .services__4, .services__5, .services__6, .services__7, .services__8, .services__9 {
       flex-direction: row;
       justify-content: space-between; } }
-  .services__1 span, .services__2 span, .services__3 span {
+  .services__1 span, .services__2 span, .services__3 span, .services__4 span, .services__5 span, .services__6 span, .services__7 span, .services__8 span, .services__9 span {
     position: relative;
     display: flex;
     align-items: center;
@@ -875,7 +875,7 @@ body {
     width: 9rem;
     height: 9rem;
     border-radius: 50%; }
-    .services__1 span::after, .services__2 span::after, .services__3 span::after {
+    .services__1 span::after, .services__2 span::after, .services__3 span::after, .services__4 span::after, .services__5 span::after, .services__6 span::after, .services__7 span::after, .services__8 span::after, .services__9 span::after {
       content: "";
       position: absolute;
       top: 50%;
@@ -884,43 +884,43 @@ body {
       width: 10rem;
       height: 10rem;
       border-radius: 50%; }
-    .services__1 span h2, .services__2 span h2, .services__3 span h2 {
+    .services__1 span h2, .services__2 span h2, .services__3 span h2, .services__4 span h2, .services__5 span h2, .services__6 span h2, .services__7 span h2, .services__8 span h2, .services__9 span h2 {
       text-align: center;
       width: 80%;
       font-size: 1rem; }
 
-.services__1 {
+.services__1, .services__5, .services__9 {
   background-color: #4380c2;
   padding-top: 2rem;
   padding-bottom: 5rem; }
-  .services__1 p {
+  .services__1 p, .services__5 p, .services__9 p {
     color: #fff; }
-  .services__1 span {
+  .services__1 span, .services__5 span, .services__9 span {
     background-color: #fff;
     margin-bottom: 1.5rem; }
-    .services__1 span::after {
+    .services__1 span::after, .services__5 span::after, .services__9 span::after {
       border: 1px solid #fff; }
 
-.services__2 {
+.services__2, .services__4, .services__7 {
   padding-top: 9rem;
   padding-bottom: 6rem;
   background: linear-gradient(115deg, #fff 0%, #fff 50%, rgba(255, 213, 140, 0.2) 50%); }
-  .services__2--svg-top, .services__2--svg-bottom {
+  .services__2--svg-top, .services__2--svg-bottom, .services__4--svg-top, .services__4--svg-bottom, .services__7--svg-top, .services__7--svg-bottom {
     position: absolute; }
-  .services__2--svg-top {
+  .services__2--svg-top, .services__4--svg-top, .services__7--svg-top {
     top: 0;
     left: 0; }
-  .services__2--svg-bottom {
+  .services__2--svg-bottom, .services__4--svg-bottom, .services__7--svg-bottom {
     bottom: 0;
     left: 0; }
   @media only screen and (min-width: 60em) {
-    .services__2 {
+    .services__2, .services__4, .services__7 {
       padding-bottom: 15rem; }
-      .services__2 .services__desc {
+      .services__2 .services__desc, .services__4 .services__desc, .services__7 .services__desc {
         width: 70%;
         border-right: 1px solid #ffd58c;
         padding-right: 1rem; } }
-  .services__2 .services__circle {
+  .services__2 .services__circle, .services__4 .services__circle, .services__7 .services__circle {
     position: absolute;
     top: -2rem;
     left: 50%;
@@ -928,25 +928,28 @@ body {
     width: 9rem;
     border-right: none; }
     @media only screen and (min-width: 60em) {
-      .services__2 .services__circle {
+      .services__2 .services__circle, .services__4 .services__circle, .services__7 .services__circle {
         top: 1rem;
         left: 85%; } }
-    .services__2 .services__circle span {
+    .services__2 .services__circle span, .services__4 .services__circle span, .services__7 .services__circle span {
       background-color: #ffd58c; }
-      .services__2 .services__circle span::after {
+      .services__2 .services__circle span::after, .services__4 .services__circle span::after, .services__7 .services__circle span::after {
         border: 1px solid #ffd58c; }
 
-.services__3 {
+.services__3, .services__6, .services__8 {
   background-color: #323232;
   padding-top: 2rem;
   padding-bottom: 2rem; }
-  .services__3 p {
+  .services__3 p, .services__6 p, .services__8 p {
     color: #fff; }
-  .services__3 span {
+  .services__3 span, .services__6 span, .services__8 span {
     background-color: #fff;
     margin-bottom: 1.5rem; }
-    .services__3 span::after {
+    .services__3 span::after, .services__6 span::after, .services__8 span::after {
       border: 1px solid #fff; }
+
+.services__3, .services__6 {
+  padding-bottom: 6rem; }
 
 .services__quote {
   padding: 4rem 0;

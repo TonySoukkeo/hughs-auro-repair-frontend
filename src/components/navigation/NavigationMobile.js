@@ -212,18 +212,18 @@ const NavigationMobile = () => {
         ) : null}
 
         {/*** LOGO ***/}
-        <div className="flex flex--center mt-sm">
+        {/* <div className="flex flex--center mt-sm">
           <img
             className="navigation-mobile__logo"
             src={Logo}
             alt="Hughs auto repair"
           />
-        </div>
+        </div> */}
 
         {/*** Social media / phone ***/}
         <div className="flex flex--space-around mt-sm">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/hughsdieselauto/"
             rel="noopener noreferrer"
             target="_blank"
             className="navigation-mobile__actions"

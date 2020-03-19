@@ -20,12 +20,14 @@ const Blog = () => {
     const getPost = async () => {
       try {
         setLoading(true);
+
         const posts = await fetch(
           `${process.env.REACT_APP_BASE_URL}/blog/posts?page=${page}&limit=3`
         );
 
         const postsData = await posts.json();
 
+        console.log(postsData);
         if (postsData.status !== 200) {
           const error = new Error();
           error.message = postsData.message;

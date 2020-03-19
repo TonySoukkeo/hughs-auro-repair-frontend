@@ -188,7 +188,7 @@ const Contact = () => {
         <h2>Follow us on social media!</h2>
 
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/hughsdieselauto/"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -20,7 +20,7 @@ const Banner = () => {
     <div className="home__banner container">
       <div className="home__banner-header">
         <h1>Honest, top quality auto repair</h1>
-        <Link className="btn btn--blue text-bold" to="/">
+        <Link to="/services" className="btn btn--blue text-bold">
           Learn More &rarr;
         </Link>
       </div>

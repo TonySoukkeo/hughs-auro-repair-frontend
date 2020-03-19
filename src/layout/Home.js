@@ -50,7 +50,7 @@ const Home = () => {
         </title>
         <meta
           name="description"
-          content="Hugh's diesel and auto repair services. Located in Great Falls, Montana, where you'll find quality vehicle service that you can trust. We offer repair services for heavy truck and equipment, automotive, onan generators, and trailer repair. Request a free quote today to get started, or give us a call at (406)866-0113. We are open Mon - Fri, 8am to 5pm"
+          content="Hugh's diesel repair and auto repair services, Great Falls Montana. Where you'll find quality vehicle service that you can trust. We offer repair services for heavy truck and equipment, automotive, onan generators, and trailer repair. Request a free quote today to get started, or give us a call at (406)866-0113. We are open Mon - Fri, 8am to 5pm"
         />
       </Helmet>
 

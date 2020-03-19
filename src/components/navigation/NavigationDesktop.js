@@ -50,7 +50,7 @@ const NavigationDesktop = () => {
           </span>
         </a>
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/hughsdieselauto/"
           target="_blank"
           rel="noopener noreferrer"
         >

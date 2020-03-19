@@ -9,21 +9,21 @@ const Intro = () => {
           <span className="underline underline--blue"></span>
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
-          labore cumque iusto fugiat officiis saepe nulla corrupti cum, tempore,
-          aspernatur nam consequuntur soluta, officia quibusdam laborum tenetur
-          obcaecati ratione voluptatum?
+          Here at Hugh’s Diesel & Auto Repair, we are nothing but honest; we
+          refuse to take advantage of any of our customers. Our shop works on
+          everything that walks in the door: diesel and gas pickups, cars,
+          semis, campers, generators, trailers, and much more!
         </p>
         <br />
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum,
-          sapiente?Lorem ipsum dolor sit amet.
+          With his 13 years of experience, Hugh can figure any problem out! Hugh
+          and his mechanics keep up on the most recent education and technology
+          in the field; we will always grow with the changes. You will leave our
+          shop feeling safe and happy.
         </p>
       </div>
 
-      <div className="home__intro-image">
-        {/* <img className="object-fit__cover" src={Img} alt="Picture of a truck" /> */}
-      </div>
+      <div className="home__intro-image"></div>
     </div>
   );
 };
