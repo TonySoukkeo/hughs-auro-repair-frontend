@@ -235,6 +235,8 @@ const ViewPosts = () => {
                 />
               ) : (
                 <div className="dashboard__view-posts-grid">
+                  {posts.length === 0 ? <h3>No blog posts to show</h3> : null}
+
                   {posts.map((post, index) => {
                     if (index + 1 === posts.length) {
                       return (

@@ -21,6 +21,7 @@ import ManageGallery from "./layout/dashboard/ManageGallery";
 import Reviews from "./layout/Reviews";
 import Quote from "./layout/Quote";
 import NotFound from "./layout/NotFound";
+import ChangePassword from "./layout/dashboard/ChangePassword";
 
 // Context
 import { DispatchContext } from "./context/StateProvider";
@@ -71,6 +72,8 @@ function App() {
             path="/dashboard/manage-gallery"
             component={ManageGallery}
           />
+          <Route exact path="/dashboard/password" component={ChangePassword} />
+
           <Route exact path="/quote" component={Quote} />
 
           <Route exact path="/testimonials" component={Reviews} />

@@ -70,17 +70,21 @@ const Blog = () => {
       {/*** Blog Display ***/}
       <div className="blog__grid-container container">
         {!loading ? (
-          <div className="blog__grid">
-            {posts.map(post => (
-              <BlogCards
-                key={post._id}
-                blogId={post._id}
-                title={post.title}
-                body={post.body}
-                postedDate={post.postedDate}
-              />
-            ))}
-          </div>
+          posts.length > 0 ? (
+            <div className="blog__grid">
+              {posts.map(post => (
+                <BlogCards
+                  key={post._id}
+                  blogId={post._id}
+                  title={post.title}
+                  body={post.body}
+                  postedDate={post.postedDate}
+                />
+              ))}
+            </div>
+          ) : (
+            <h3>No blog posts to display</h3>
+          )
         ) : (
           <Loading
             styles={{
@@ -92,24 +96,26 @@ const Blog = () => {
       </div>
 
       {/*** Next / Prev Buttons ***/}
-      <div className="blog__buttons-container">
-        <button
-          onClick={page > 1 && !loading ? prevPage : null}
-          className={
-            page > 1 && !loading ? "btn-prev btn-prev--active" : "btn-prev"
-          }
-        >
-          Prev
-        </button>
-        <button
-          onClick={loadMore && !loading ? nextPage : null}
-          className={
-            loadMore && !loading ? "btn-next btn-next--active" : "btn-next"
-          }
-        >
-          Next
-        </button>
-      </div>
+      {posts.length > 0 ? (
+        <div className="blog__buttons-container">
+          <button
+            onClick={page > 1 && !loading ? prevPage : null}
+            className={
+              page > 1 && !loading ? "btn-prev btn-prev--active" : "btn-prev"
+            }
+          >
+            Prev
+          </button>
+          <button
+            onClick={loadMore && !loading ? nextPage : null}
+            className={
+              loadMore && !loading ? "btn-next btn-next--active" : "btn-next"
+            }
+          >
+            Next
+          </button>
+        </div>
+      ) : null}
     </section>
   );
 };

@@ -168,9 +168,17 @@
   font-weight: bold;
   border-radius: 3px;
 
-  &--err {
+  &--err,
+  &--success {
     background-color: #fff;
+  }
+
+  &--err {
     border: 2px solid $color-red;
+  }
+
+  &--success {
+    border: 2px solid $color-green;
   }
 }
 

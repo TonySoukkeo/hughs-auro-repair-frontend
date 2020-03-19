@@ -1,6 +1,11 @@
 .dashboard {
   padding-bottom: 2rem;
 
+  &__link {
+    color: $color-blue-primary;
+    font-weight: bold;
+  }
+
   &__nav {
     display: flex;
     justify-content: space-between;
@@ -356,6 +361,23 @@
         &:not(:last-child) {
           margin-right: 1rem;
         }
+      }
+    }
+  }
+
+  &__password {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+
+    form {
+      @include respond(medium) {
+        width: 50%;
+      }
+
+      button {
+        font-size: 1rem;
+        align-self: flex-start;
       }
     }
   }

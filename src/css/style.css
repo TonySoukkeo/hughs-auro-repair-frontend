@@ -148,9 +148,12 @@ body {
   text-align: center;
   font-weight: bold;
   border-radius: 3px; }
+  .alert--err, .alert--success {
+    background-color: #fff; }
   .alert--err {
-    background-color: #fff;
     border: 2px solid #c01e1e; }
+  .alert--success {
+    border: 2px solid #5de043; }
 
 .form {
   display: flex;
@@ -1264,6 +1267,9 @@ body {
 
 .dashboard {
   padding-bottom: 2rem; }
+  .dashboard__link {
+    color: #4380c2;
+    font-weight: bold; }
   .dashboard__nav {
     display: flex;
     justify-content: space-between;
@@ -1511,6 +1517,16 @@ body {
         border-radius: 3px; }
         .dashboard__manage-gallery__alert button:not(:last-child) {
           margin-right: 1rem; }
+  .dashboard__password {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%; }
+    @media only screen and (min-width: 60em) {
+      .dashboard__password form {
+        width: 50%; } }
+    .dashboard__password form button {
+      font-size: 1rem;
+      align-self: flex-start; }
 
 .view-blog {
   position: relative;

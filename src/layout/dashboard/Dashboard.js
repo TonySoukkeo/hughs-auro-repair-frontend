@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Link } from "react-router-dom";
 import { SET_AUTH } from "../../reducers/constants/AuthConstants";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 // Components
 import Manage from "../../components/dashboard/Manage";
@@ -47,8 +47,14 @@ const Dashboard = () => {
           <section className="dashboard">
             <Helmet>
               <title>Hugh's diesel and auto repair | Admin Dashboard</title>
-            </Helmet>  
+            </Helmet>
             <DashNav signOut={signOut} firstName={user.firstName} />
+
+            <div className="container mb-sm">
+              <Link className="dashboard__link" to="/dashboard/password">
+                Change Password
+              </Link>
+            </div>
 
             <div className="dashboard__content container">
               {error ? (
